@@ -1,7 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<main class="form-signin w-100 m-auto">
+    <form method="POST" action="{{ route('register') }}">
+      <h1 class="h3 mb-3 fw-normal">ลงทะเบียน</h1>
+  
+      <div class="form-floating my-2">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">อีเมล</label>
+      </div>
+
+      <div class="form-floating my-2">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">รหัสผ่าน</label>
+      </div>
+
+      <div class="form-floating my-2">
+        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
+        <label for="floatingPassword">ยืนยันรหัสผ่าน</label>
+      </div>
+  
+     
+      <button class="btn btn-danger w-100 py-2" type="submit">ลงทะเบียน</button>
+      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="login.blade.php">เข้าสู่ระบบ</a></p>
+    </form>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +109,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
