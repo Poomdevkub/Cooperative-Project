@@ -23,7 +23,7 @@
       </div> --}}
 
       <button class="btn btn-danger w-100 py-2" type="submit">เข้าสู่ระบบ</button>
-      <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="register.blade.php">ลงทะเบียนใหม่</a></p>
+      <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="register.blade.php" class="text-red">ลงทะเบียนใหม่</a></p>
     </form>
   </main>
 

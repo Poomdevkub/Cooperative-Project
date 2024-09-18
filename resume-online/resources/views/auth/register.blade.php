@@ -23,7 +23,7 @@
   
      
       <button class="btn btn-danger w-100 py-2" type="submit">ลงทะเบียน</button>
-      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="login.blade.php">เข้าสู่ระบบ</a></p>
+      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="login.blade.php" class="text-red">เข้าสู่ระบบ</a></p>
     </form>
   </main>
 
