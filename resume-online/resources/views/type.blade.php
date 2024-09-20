@@ -41,9 +41,14 @@
             </label>
         </div>
         <div class="text-center">
-            <button class="btn btn-secondary mt-2" style="width: 42%">ปุ่มสีเทา</button>
+            <button class="btn btn-secondary mt-2" style="width: 42%">ดำเนินการต่อ</button>
         </div>
-        <p class="mt-3">ออกจากระบบ</p>
+        <div class="text-center">
+            <button class="btn btn-link mt-3">ออกจากระบบ </button> 
+        </div>
+        
+        
+        
         
     </div>
     

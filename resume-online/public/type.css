@@ -1,11 +1,10 @@
 /* จัดการตำแหน่งและสไตล์ของ h1, h2 */
-h1, h2, h3, p {
+h1, h2, h3, p, a {
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
-p {
-    text-align: center;
-}
+
+
 
 /* กำหนดขนาดและระยะห่างของ container */
 .container {
@@ -57,6 +56,72 @@ p {
 .button {
     justify-content: center;
 }
+
+/* สไตล์พื้นฐานสำหรับข้อความ */
+a.mt-3 {
+    /* จัดการตำแหน่งและสไตล์ของ h1, h2 */
+h1, h2, h3, p, a {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* กำหนดขนาดและระยะห่างของ container */
+.container {
+    margin-top: 50px;
+}
+
+/* สไตล์สำหรับการ์ด */
+.card-custom {
+    border-radius: 15px; /* เพิ่มความโค้งให้กับ card */
+    overflow: hidden; /* ทำให้ขอบภาพอยู่ในขอบการ์ด */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อความสวยงาม */
+    transition: transform 0.2s; /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+    
+}
+
+.card-custom:hover {
+    transform: scale(1.05); /* ขยายการ์ดเล็กน้อยเมื่อ hover */
+}
+
+/* สไตล์สำหรับภาพในการ์ด */
+.card-custom img {
+    border-radius: 15px 15px 0 0; /* ทำให้ภาพมีขอบมนเฉพาะด้านบน */
+    object-fit: cover; /* ทำให้ภาพขยายเต็มกรอบโดยคงอัตราส่วน */
+    height: 200px; /* กำหนดความสูงให้คงที่ */
+    width: 100%; /* ทำให้ภาพเต็มความกว้างของการ์ด */
+    cursor: pointer;
+}
+
+/* สไตล์สำหรับข้อความในการ์ด */
+.card-text {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-check {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.form-check-input {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+.col-md-5 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* .button {
+    justify-content: center;
+} */
+
+
+
+
 /* h1 {
     text-align: center;
 }
