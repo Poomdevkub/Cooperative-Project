@@ -26,3 +26,12 @@ class HomeController extends Controller
         return view('home');
     }
 }
+
+
+// public function about(){
+//     $name="โจโจ้"
+//     $date="10 ตุลาคม 2566";
+//     return view('about',compact('name','date'));
+// }
+
+

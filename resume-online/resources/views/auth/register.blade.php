@@ -5,7 +5,7 @@
 <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('register') }}">
       <h1 class="h3 mb-3 fw-normal">ลงทะเบียน</h1>
-  
+
       <div class="form-floating my-2">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">อีเมล</label>
@@ -20,10 +20,10 @@
         <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
         <label for="floatingPassword">ยืนยันรหัสผ่าน</label>
       </div>
-  
-     
+
+
       <button class="btn btn-danger w-100 py-2" type="submit">ลงทะเบียน</button>
-      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="login.blade.php" class="text-red">เข้าสู่ระบบ</a></p>
+      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="{{ route('login') }}" class="text-red">เข้าสู่ระบบ</a></p>
     </form>
   </main>
 
