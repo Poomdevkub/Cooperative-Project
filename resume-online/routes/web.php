@@ -4,12 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 
-// หน้าแรก (แสดง welcome.blade.php)
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+//home ของจริง
+Route::get('/', function () { return view('jobie'); })->name('jobie');
 
 // Route สำหรับหน้าหลักหลังล็อกอิน
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
