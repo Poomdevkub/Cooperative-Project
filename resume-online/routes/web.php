@@ -20,10 +20,16 @@ Route::get('user-dash', function () {
 Auth::routes();
 
 //home ของจริง
-Route::get('/', function () { return view('jobie'); })->name('jobie');
+//Route::get('/', function () { return view('jobie'); })->name('jobie');
+
+Route::get('/jobie', function () { return view('jobie'); })->name('home');
+
+Route::redirect('/home', '/jobie'); // redirect ไปยังหน้า home
+Route::redirect('/', '/jobie'); // redirect ไปยังหน้า home
+
 
 // Route สำหรับหน้าหลักหลังล็อกอิน
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+////Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route สำหรับแสดงข้อมูลบริษัท
 Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
