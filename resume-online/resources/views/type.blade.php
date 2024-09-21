@@ -43,10 +43,8 @@
         <div class="text-center">
             <button class="btn btn-secondary mt-2" style="width: 42%">ดำเนินการต่อ</button>
         </div>
-        {{-- <div class="text-center">
-            <b class="btn btn-outline-dark mt-3">ออกจากระบบ </b> 
-        </div> --}}
-        <div class="text-center">
+        
+        <div class="text-center mt-3">
             <a href="#" style="margin: 20px; color:black">ออกจากระบบ </a> 
         </div>
         
