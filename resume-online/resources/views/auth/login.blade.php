@@ -15,7 +15,7 @@
                 <i class='bx bx-lock-alt' ></i>
             </div>
 
-            <a href="{{ route('jobie') }}">
+            <a href="{{ route('home') }}">
                 <button type="submit" class="btn">เข้าสู่ระบบ</button>
             </a>
     
