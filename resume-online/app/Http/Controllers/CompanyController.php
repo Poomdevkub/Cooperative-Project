@@ -10,17 +10,19 @@ class CompanyController extends Controller
     /**
      * แสดงรายละเอียดของบริษัทที่ compID = 1
      */
-    public function show()
+    public function show($id)
     {
-        // ดึงข้อมูลบริษัทที่ compID = 1
-        $company = Company::find(1);
+        // ดึงข้อมูลบริษัทที่ compID เท่ากับ $id พร้อมกับข้อมูลความสัมพันธ์
+        $company = Company::with(['companyType', 'province', 'district', 'subdistrict'])
+                          ->where('compID', $id)
+                          ->first();
 
-        // ตรวจสอบว่ามีข้อมูลหรือไม่
+        // เช็คว่ามีข้อมูลหรือไม่
         if (!$company) {
-            return view('company.notfound', ['id' => 1]);
+            return abort(404, 'Company not found');
         }
 
-        // ส่งข้อมูลไปยัง View
-        return view('company.show', ['company' => $company]);
+        // ส่งข้อมูลไปยัง view
+        return view('company.show', compact('company'));
     }
 }
