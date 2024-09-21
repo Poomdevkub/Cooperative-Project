@@ -53,7 +53,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
+            border-radius: 20px;
+        }
+        .card-body {
+            border-top-left-radius: 20px; /* มุมซ้ายบน */
+            border-top-right-radius: 20px; /* มุมขวาบน */
         }
 
         .card-img-top {
@@ -145,6 +149,39 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        .white-box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .white-box {
+            background-color: white;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .white-box h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .white-box span {
+            font-size: 32px;
+            color: #0d6efd;
+        }
+
+
     </style>
 
     <div class="d-flex">
@@ -192,7 +229,21 @@
             </div>
         </div>
 
-        <div>
+        <div class="white-box-container">
+            <div class="white-box">
+                <h3>คำเชิญจากบริษัท</h3>
+                <span>2</span>
+            </div>
+    
+            <div class="white-box">
+                <h3>ตอบรับคำเชิญ</h3>
+                <span>1</span>
+            </div>
+    
+            <div class="white-box">
+                <h3>ปฏิเสธคำเชิญ</h3>
+                <span>1</span>
+            </div>
         </div>
     </div>
 
