@@ -2,20 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    // กำหนดชื่อตารางถ้าไม่ใช่รูปแบบพหูพจน์
+    use HasFactory;
+
+    // กำหนดชื่อของตารางหากชื่อไม่เป็นพหูพจน์ของ Model
     protected $table = 'company';
 
-    // กำหนด primary key ถ้าไม่ใช่ 'id'
+    // กำหนด primary key
     protected $primaryKey = 'compID';
 
-    // ถ้าตารางไม่มีคอลัมน์ timestamps
+    // กำหนดว่าตารางไม่มี timestamps
     public $timestamps = false;
 
-    // กำหนดฟิลด์ที่สามารถกรอกข้อมูลได้ (optional)
+    // กำหนด fillable fields
     protected $fillable = [
         'compName',
         'provinceID',
@@ -30,6 +33,29 @@ class Company extends Model
         'compWebsite',
         'compContactName',
         'compContactPosition',
-        'userPassID'
+        'userPassID',
     ];
+
+    // ความสัมพันธ์กับตารางอื่น ๆ
+
+    public function companyType()
+    {
+        return $this->belongsTo(CompanyType::class, 'companyTypeID');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'provinceID');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'districtID');
+    }
+
+    public function subdistrict()
+    {
+        return $this->belongsTo(Subdistrict::class, 'subdistrictID');
+    }
+
 }

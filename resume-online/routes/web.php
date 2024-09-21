@@ -22,7 +22,7 @@ Route::get('type',function () {
 });
 
 Route::get('user-dash', function () {
-    return view('user-dash');
+    return view('user/user-dash');
 });
 
 
@@ -64,10 +64,16 @@ Route::fallback(function(){// ไม่มีการสร้าง route ไ�
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //home ของจริง
-Route::get('/', function () { return view('jobie'); })->name('jobie');
+//Route::get('/', function () { return view('jobie'); })->name('jobie');
+
+Route::get('/jobie', function () { return view('jobie'); })->name('home');
+
+Route::redirect('/home', '/jobie'); // redirect ไปยังหน้า home
+Route::redirect('/', '/jobie'); // redirect ไปยังหน้า home
+
 
 // Route สำหรับหน้าหลักหลังล็อกอิน
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+////Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route สำหรับแสดงข้อมูลบริษัท
 Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
@@ -77,3 +83,11 @@ Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+
+Route::get('/login', function () { return view('/auth/login'); })->name('login');
+
+Route::get('/register', function () { return view('/auth/register'); })->name('register');
+
+Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
+
+Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');

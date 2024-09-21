@@ -20,7 +20,7 @@
             <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->userDatebirth ? \Carbon\Carbon::parse($user->userDatebirth)->format('d/m/Y') : 'N/A' }}</p>
             <p class="card-text"><strong>วันที่ลงทะเบียน:</strong> {{ $user->userRegisdate ? \Carbon\Carbon::parse($user->userRegisdate)->format('d/m/Y') : 'N/A' }}</p>
             <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $user->userPosition ?? 'N/A' }}</p>
-            <p class="card-text"><strong>สถานะการแสดง:</strong> {{ ucfirst($user->userStatusShow ?? 'N/A') }}</p>
+            <!--<p class="card-text"><strong>สถานะการแสดง:</strong> {{ ucfirst($user->userStatusShow ?? 'N/A') }}</p>-->
             <!-- เพิ่มข้อมูลเพิ่มเติมตามต้องการ -->
         </div>
     </div>
