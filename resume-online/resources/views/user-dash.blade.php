@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.company')
 @section('title', 'หน้าแดชบอร์ด')
 
 @section('content')
@@ -17,7 +17,7 @@
       top: 0;
     }
     .sidebar .section-title {
-      background-color: #d9534f;
+      background-color: #0d6efd;
       color: white;
       padding: 0.5rem;
       border-radius: 0.25rem;
