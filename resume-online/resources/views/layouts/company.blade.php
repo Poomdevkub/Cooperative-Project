@@ -52,6 +52,11 @@
                         .dropdown-menu{
                             margin-left: -150%;
                         }
+
+                        .dropdown-menu :hover {
+                          background-color: #0d6efd;
+                          color: white;
+                        }
                     </style>
                   </ul>
                 </li>
