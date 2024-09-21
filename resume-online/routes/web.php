@@ -5,9 +5,9 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 
 // กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
-Route::fallback(function() {   
+Route::fallback(function() {
     return "<h1>ไม่พบหน้าเว็บดังกล่าว</h1>";
-}); 
+});
 
 Route::get('type',function () {
     return view('type');
@@ -33,3 +33,6 @@ Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+
+
+Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
