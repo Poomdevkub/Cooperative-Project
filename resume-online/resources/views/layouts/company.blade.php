@@ -15,6 +15,7 @@
     </style>
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/public/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyQwq4jN1jxptpDDHAxtZwU4y3XpZG9wCx/q27P4kRF9q9RWVh7bR9QYtu8/c9av/0wHZotQsCX3QGlRf6EbZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
