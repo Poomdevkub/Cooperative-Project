@@ -7,7 +7,7 @@
         <form action="">
             <h1 style="text-align: center;">Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="ชื่อผู้ใช้" required>
+                <input type="text" placeholder="email" required>
                 <i class='bx bx-user' ></i>
             </div>
             <div class="input-box">
