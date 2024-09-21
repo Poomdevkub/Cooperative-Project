@@ -18,9 +18,9 @@ class UserController extends Controller
     }
 
     // แสดงรายละเอียดผู้ใช้
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-        return view('findUser.userDetail', compact('user')); // ชี้ไปยัง 'findUser.userDetail'
+    public function show($id) {
+        $user = User::find($id);
+        return view('findUser.userDetail', compact('user'));
     }
+
 }

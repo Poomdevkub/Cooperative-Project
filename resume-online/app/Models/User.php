@@ -45,5 +45,16 @@ class User extends Authenticatable
         'userPassID',
     ];
 
-    // ความสัมพันธ์กับตารางอื่น ๆ (ถ้ามี)
+    // ความสัมพันธ์กับตารางอื่น ๆ
+    public function district() {
+        return $this->belongsTo(District::class, 'districtID');
+    }
+
+    public function province() {
+        return $this->belongsTo(Province::class, 'provinceID');
+    }
+
+    public function subdistrict() {
+        return $this->belongsTo(Subdistrict::class, 'subdistrictID');
+    }
 }
