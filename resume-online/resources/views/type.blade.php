@@ -18,7 +18,7 @@
             <!-- Card 1 -->
             <div class="col-md-5">
                 <div class="card card-custom">
-                    <img src="./images/ผู้ที่กำลังมองหางาน.jpg" class="card-img-top" alt="ผู้ที่กำลังมองหางาน">
+                    <img src="./images/user-find.jpg" class="card-img-top" alt="ผู้ที่กำลังมองหางาน">
                     <div class="card-body text-center">
                         <p class="card-text font-weight-bold">ผู้ที่กำลังมองหางาน</p>
                     </div>
@@ -27,7 +27,7 @@
             <!-- Card 2 -->
             <div class="col-md-5">
                 <div class="card card-custom">
-                    <img src="./images/บริษัท-ผู้จัดหางาน.jpg" class="card-img-top" alt="บริษัท, ผู้จัดหางาน">
+                    <img src="./images/company-find.jpg" class="card-img-top" alt="บริษัท, ผู้จัดหางาน">
                     <div class="card-body text-center">
                         <p class="card-text font-weight-bold">บริษัท, ผู้จัดหางาน</p>
                     </div>

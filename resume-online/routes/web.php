@@ -16,6 +16,10 @@ Route::get('type',function () {
     return view('type');
 });
 
+Route::get('user-dash', function () {
+    return view('user-dash');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
