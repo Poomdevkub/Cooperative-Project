@@ -4,6 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 
+// กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
+Route::fallback(function() {   
+    return "<h1>ไม่พบหน้าเว็บดังกล่าว</h1>";
+}); 
+
+Route::get('type',function () {
+    return view('type');
+});
+
+Route::get('user-dash', function () {
+    return view('user-dash');
+});
 
 Auth::routes();
 
