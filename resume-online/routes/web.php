@@ -14,7 +14,7 @@ Route::get('type',function () {
 });
 
 Route::get('user-dash', function () {
-    return view('user-dash');
+    return view('user/user-dash');
 });
 
 Auth::routes();
