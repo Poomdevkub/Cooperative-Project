@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                                    {{--  กำลัง login อยู่    --}}
                     {{ __('You are logged in!') }}
                 </div>
             </div>

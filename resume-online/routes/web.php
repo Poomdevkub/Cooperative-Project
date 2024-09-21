@@ -20,15 +20,16 @@ Route::get('type',function () {
 
 Auth::routes();
 
+Route::get('/' , function(){
+    return view("welcome") ;
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');      // ในส่วนของcall back function จะไปอยู่ในส่วนของ controller เเทน ทำงานประมวลผลในนั้นเลย
 
 // Route สำหรับแสดงบริษัทที่
 Route::get('/company', [CompanyController::class, 'show']);     //
 
 
-Route::get('/' , function(){
-    return view("welcome") ;
-});
 
 
 // Route::get('/' , function(){
@@ -52,3 +53,7 @@ Route::fallback(function(){// ไม่มีการสร้าง route ไ�
     // return "<a herf='".route('/home')."'></a>" ;
     return "<h1>ไม่พบหน้าเว็บ :> </h1>" ;
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

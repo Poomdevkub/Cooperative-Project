@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','register')
+
 @section('content')
 
 <main class="form-signin w-100 m-auto">
@@ -110,4 +112,5 @@
         </div>
     </div>
 </div> --}}
+
 @endsection

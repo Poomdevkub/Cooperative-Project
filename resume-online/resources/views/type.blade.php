@@ -1,9 +1,14 @@
+{{-- @section('title','TypeSelectRole') --}}
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Bootstrap Cards</title>
+
+    {{-- <title>Horizontal Bootstrap Cards</title> --}}
+    <title>regisRole page</title>
+
     <!-- เชื่อมต่อ Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- เชื่อมต่อไฟล์ CSS แยก -->
@@ -41,21 +46,21 @@
             </label>
         </div>
         <div class="text-center">
-            <button class="btn btn-secondary mt-2" style="width: 42%">ดำเนินการต่อ</button>
+            <button class="btn btn-secondary mt-2" href="#" style="width: 42%">ดำเนินการต่อ</button>
         </div>
         {{-- <div class="text-center">
-            <b class="btn btn-outline-dark mt-3">ออกจากระบบ </b> 
+            <b class="btn btn-outline-dark mt-3">ออกจากระบบ </b>
         </div> --}}
         <div class="text-center">
-            <a href="#" style="margin: 20px; color:black">ออกจากระบบ </a> 
+            <button class="btn btn-warning mt-2" href="#" style="width: 42%">ออกจากระบบ </button>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
     </div>
-    
+
 <!-- เชื่อมต่อ Bootstrap JS และ jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
