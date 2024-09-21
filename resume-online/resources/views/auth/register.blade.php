@@ -7,8 +7,8 @@
       <h1 class="h3 mb-3 fw-normal">ลงทะเบียน</h1>
 
       <div class="form-floating my-2">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">อีเมล</label>
+        <input type="username" class="form-control" id="floatingInput" placeholder="">
+        <label for="floatingInput">ชื่อผู้ใช้</label>
       </div>
 
       <div class="form-floating my-2">
