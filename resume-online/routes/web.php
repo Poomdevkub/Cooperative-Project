@@ -33,3 +33,9 @@ Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+
+Route::get('/login', function () { return view('/auth/login'); })->name('login');
+
+Route::get('/register', function () { return view('/auth/register'); })->name('register');
+
+Route::get('/register/type', function () { return view('/auth/type'); })->name('type');

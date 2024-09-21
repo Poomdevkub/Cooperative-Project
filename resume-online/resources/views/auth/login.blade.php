@@ -1,8 +1,110 @@
 @extends('layouts.app')
-
 @section('content')
 
-<main class="form-signin w-100 m-auto">
+
+<div class="content">
+    <div class="wrapper">
+        <form action="">
+            <h1 style="text-align: center;">Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="ชื่อผู้ใช้" required>
+                <i class='bx bx-user' ></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="รหัสผ่าน" required>
+                <i class='bx bx-lock-alt' ></i>
+            </div>
+
+            <a href="{{ route('jobie') }}">
+                <button type="submit" class="btn">เข้าสู่ระบบ</button>
+            </a>
+    
+            <div class="register-link">
+                <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
+            </div>
+            <style>
+                .content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                }
+                .wrapper{
+                    width: 420px;
+                    background: transparent;
+                    border: 2px solid rgba(255, 255, 255, .2);
+                    backdrop-filter: blur(20px);
+                    box-shadow: 0 0 10px  rgba(0, 0, 0, .2);
+                    color: #fff;
+                    border-radius: 10px;
+                    padding: 30px 40px;
+
+                }
+                '.wrapper h1{
+                    font-size: 36px;
+                }
+                .wrapper .input-box{
+                    width: 100%;
+                    height: 50px;
+                    background: salmon;
+                    margin: 30px 0;
+                }
+                .input-box input {
+                    width: 100%;
+                    height: 100%;
+                    margin-top: 5%;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    border: 2px solid rgba(255, 255, 255, .2);
+                    border-radius: 40px;
+                    font-size: 16px;
+                    color: #fff;
+                    padding: 20px 45px 20px 20px;
+                }
+                .input-box input::placeholder {
+                    color: #fff;
+                }
+                .input-box i {
+                    position: absolute;
+                    right : 15%;
+                    margin-top: 12%; 
+                    transform: translateY(-50%);
+                    font-size: 20px; 
+                }
+                .wrapper .btn {
+                    width: 100%;
+                    height: 45px;
+                    background: #31bcea;
+                    border: none;
+                    outline: none;
+                    border-radius: 40px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                    cursor: pointer;
+                    font-size: 16px;
+                    color: #fff;
+                    font-weight: 600;
+                    margin-top: 5%;
+                }
+                .wrapper .register-link {
+                    font-size: 14.5px;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .register-link p a {
+                    color: #31bcea;
+                    text-decoration: none;
+                    font-weight: 20px;
+                }
+                .register-link p a:hover{
+                    text-decoration: underline;
+                }
+            </style>
+        </form>
+    </div>
+</div>
+
+{{-- <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('login') }}">
       <h1 class="h3 mb-3 fw-normal">เข้าสู่ระบบ</h1>
   
@@ -14,18 +116,10 @@
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">รหัสผ่าน</label>
       </div>
-  
-      {{-- <div class="form-check text-start my-3">
-        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Remember me
-        </label>
-      </div> --}}
-
       <button class="btn btn-primary w-100 py-2" type="submit">เข้าสู่ระบบ</button>
       <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="{{ route('register') }}">ลงทะเบียน</a></p>
     </form>
-  </main>
+  </main> --}}
 
 
 

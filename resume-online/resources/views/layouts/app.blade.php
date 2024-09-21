@@ -16,6 +16,7 @@
   </style>
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/public/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -25,18 +26,18 @@
             <ul class="navbar-nav">
                 
               <li class="nav-item">
-                <a class="nav-link" href="{{route('findUser')}}">ค้นหาผู้หางาน</a>
+                <a class="nav-link" href="{{route('login')}}">ค้นหาผู้หางาน</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('home')}}">ค้นหานักศึกษาฝึกงาน</a>
+                <a class="nav-link" href="{{route('login')}}">ค้นหานักศึกษาฝึกงาน</a>
               </li>
             </ul>
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('home')}}">เข้าสู่ระบบ</a>
+                    <a class="nav-link" href="{{route('login')}}">เข้าสู่ระบบ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('home')}}">
+                    <a class="nav-link" href="{{route('register')}}">
                         <button type="button" class="btn btn-primary btn-sm">สมัครสมาชิก</button>
                     </a>
                 </li>

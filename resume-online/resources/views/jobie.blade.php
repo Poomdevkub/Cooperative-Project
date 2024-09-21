@@ -3,5 +3,5 @@
     JOBIE
 @endsection
 @section('content')
-    </div>
+    
 @endsection
