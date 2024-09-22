@@ -65,5 +65,8 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
 
 // new
-Route::get('/company', [CompanyController::class, 'showCompany'])->middleware('auth');
+Route::get('/company', [CompanyController::class, 'showCompany'])->middleware('auth')->name('company.show');
+Route::get('/company/edit/{id}', [CompanyController::class, 'edit'])->middleware('auth')->name('company.edit');
+Route::post('/company/update/{id}', [CompanyController::class, 'update'])->middleware('auth')->name('company.update');
+Route::get('/company/{id}', [CompanyController::class, 'show'])->middleware('auth')->name('company.show');
 

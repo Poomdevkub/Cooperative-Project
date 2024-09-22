@@ -27,6 +27,7 @@
                     <li class="list-group-item"><strong>ชื่อผู้ติดต่อ:</strong> {{ $company->compContactName ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>ตำแหน่งผู้ติดต่อ:</strong> {{ $company->compContactPosition ?? 'ไม่ระบุ' }}</li>
                 </ul>
+                <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-warning mt-3">แก้ไขข้อมูล</a>
             </div>
         </div>
     </div>
