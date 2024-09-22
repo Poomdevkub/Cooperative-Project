@@ -26,5 +26,17 @@
                 <button type="submit" class="btn">แก้ใข</button>
             </a>
         </div>
+        <div><!--profile-->
+            <img src="{{'storage/public/'.Auth::user()->namePicture}}">
+        </div>
+
+        <div><!--resume-->
+            @php
+                $path = App\Models\Work::findWorkById(Auth::user()->id);
+            @endphp
+            <img src="{{'storage/public/resume/'.$path->nameResume}}">
+        </div>
+
+
     </div>
 @endsection

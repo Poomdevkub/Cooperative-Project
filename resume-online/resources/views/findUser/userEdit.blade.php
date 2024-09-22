@@ -71,7 +71,7 @@
                 <div class="input-box">
                     <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
                     <input name="line" id="line" type="text" value="{{ $contact->line ?? 'N/A' }}" required>
-                <div class="input-box">
+                </div>
 
                  <a type="submit">
                     <button type="submit" class="btn">ยืนยัน</button>

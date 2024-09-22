@@ -4,6 +4,7 @@ use App\Http\Middleware\companyMiddle;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 use App\Http\Middleware\userMiddle;
 use App\Http\Controllers\CompanyFollowingController;
 
@@ -41,7 +42,10 @@ Route::middleware([userMiddle::class])->group(function () {
     Route::get('/user', [UserController::class, 'show'])->name('user.show');
     Route::get('/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::post('/update', [UserController::class, 'update'])->name('user.update');
-
+    Route::get('/uploadProfile', [UploadController::class, 'uploadProfile'])->name('user.uploadP');
+    Route::post('/uploadProfile', [UploadController::class, 'uploaingProfile'])->name('user.uploadProfile');
+    Route::get('/uploadResume', [UploadController::class, 'uploadResume'])->name('user.uploadR');
+    Route::post('/uploadResume', [UploadController::class, 'uploaingResume'])->name('user.uploadResume');
 
 });
 

@@ -80,6 +80,17 @@ class Work extends Model
         ]);
         
     }
+    public static function uploadProfile($id,$data){
+        DB::table('users')->where('id',$id)->update([
+            'namePicture'=> $data,
+        ]);
+    }
+
+    public static function uploadResume($id,$data){
+        DB::table('workfinder')->where('workfinderID',$id)->update([
+            'nameResume'=> $data,
+        ]);
+    }
 
 }
 
