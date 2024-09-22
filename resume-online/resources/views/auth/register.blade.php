@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('title','register')
 
 @section('content')
-
+{{--
 <div class="content">
     <div class="wrapper">
         <form action="">
@@ -72,9 +72,9 @@
                 .input-box i {
                     position: absolute;
                     right : 15%;
-                    margin-top: 12%; 
+                    margin-top: 12%;
                     transform: translateY(-50%);
-                    font-size: 20px; 
+                    font-size: 20px;
                 }
                 .wrapper .btn {
                     width: 100%;
@@ -107,7 +107,7 @@
         </form>
     </div>
 </div>
-
+ --}}
 
 
 {{-- <main class="form-signin w-100 m-auto">
@@ -139,13 +139,7 @@
 
 
 
-
-
-
-
-
-
-{{-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -217,6 +211,6 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 
 @endsection

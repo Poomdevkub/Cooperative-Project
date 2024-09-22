@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('title','login')
 
 @section('content')
 
-    <main class="form-signin w-100 m-auto">
+    {{-- <main class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('login') }}">
         <h1 class="h3 mb-3 fw-normal">เข้าสู่ระบบ</h1>
 
@@ -15,7 +15,7 @@
         <div class="form-floating my-2">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">รหัสผ่าน</label>
-        </div>
+        </div> --}}
 
         {{-- <div class="form-check text-start my-3">
             <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
@@ -24,13 +24,13 @@
             </label>
         </div> --}}
 
-        <button class="btn btn-danger w-100 py-2" type="submit">เข้าสู่ระบบ</button>
+        {{-- <button class="btn btn-danger w-100 py-2" type="submit">เข้าสู่ระบบ</button>
         <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="{{ route('register') }}" class="text-red">ลงทะเบียนใหม่</a></p>
         </form>
     </main>
-@section('content')
+@section('content') --}}
 
-
+{{--
 <div class="content">
     <div class="wrapper">
         <form action="">
@@ -108,14 +108,7 @@
                     border: none;
                     outline: none;
                     border-radius: 40px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-                    cursor: pointer;
-                    font-size: 16px;
-                    color: #fff;
-                    font-weight: 600;
-                    margin-top: 5%;
-                }
-                .wrapper .register-link {
+                 .wrapper .register-link {
                     font-size: 14.5px;
                     text-align: center;
                     margin-top: 20px;
@@ -131,7 +124,14 @@
             </style>
         </form>
     </div>
-</div>
+</div>                  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                    cursor: pointer;
+                    font-size: 16px;
+                    color: #fff;
+                    font-weight: 600;
+                    margin-top: 5%;
+                } --}}
+
 
 {{-- <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('login') }}">
@@ -161,7 +161,7 @@
 
 
 
-{{-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -229,7 +229,7 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 
 
 

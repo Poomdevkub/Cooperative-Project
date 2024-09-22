@@ -1,5 +1,6 @@
-{{-- @section('title','TypeSelectRole') --}}
+@extends('layout')
 
+{{-- @section('title','TypeSelectRole') --}}
 <!DOCTYPE html>
 <html lang="th">
 <head>

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 
 Auth::routes();
 
@@ -10,30 +11,39 @@ Route::get('/', function () {
     return view('welcome');      //call back function
     //return "<h1> Welcome จ้า </h1>";
 });
-use App\Http\Controllers\UserController;
+
+// Route::get('/' , function(){
+//     return view("welcome") ;
+// });
+
+
+
 
 // กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
 Route::fallback(function() {
     return "<h1>ไม่พบหน้าเว็บดังกล่าว</h1>";
 });
 
-Route::get('type',function () {
-    return view('type');
-});
-
-Route::get('user-dash', function () {
-    return view('user/user-dash');
-});
+// Route::fallback(function(){// ไม่มีการสร้าง route ไว้ มันก็จะเข้าตรงนี้เเทน
+//     // return "<a herf='".route('/home')."'></a>" ;
+//     return "<h1>ไม่พบหน้าเว็บดังกล่าว :> </h1>" ;
+// });
 
 
-Route::get('/' , function(){
-    return view("welcome") ;
-});
+
+
+// Route::get('type',function () {
+//     return view('type');
+// });
+
+// Route::get('user-dash', function () {
+//     return view('user/user-dash');
+// });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');      // ในส่วนของcall back function จะไปอยู่ในส่วนของ controller เเทน ทำงานประมวลผลในนั้นเลย
 
 // Route สำหรับแสดงบริษัทที่
-Route::get('/company', [CompanyController::class, 'show']);     //
+// Route::get('/company', [CompanyController::class, 'show']);     //
 
 
 
@@ -55,39 +65,34 @@ Route::get('/company', [CompanyController::class, 'show']);     //
 // });
 
 
-Route::fallback(function(){// ไม่มีการสร้าง route ไว้ มันก็จะเข้าตรงนี้เเทน
-    // return "<a herf='".route('/home')."'></a>" ;
-    return "<h1>ไม่พบหน้าเว็บ :> </h1>" ;
-});
-
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //home ของจริง
 //Route::get('/', function () { return view('jobie'); })->name('jobie');
 
-Route::get('/jobie', function () { return view('jobie'); })->name('home');
+// Route::get('/jobie', function () { return view('jobie'); })->name('home');
 
-Route::redirect('/home', '/jobie'); // redirect ไปยังหน้า home
-Route::redirect('/', '/jobie'); // redirect ไปยังหน้า home
+// Route::redirect('/home', '/jobie');     // redirect ไปยังหน้า home
+// Route::redirect('/', '/jobie');     // redirect ไปยังหน้า home
+
+
 
 
 // Route สำหรับหน้าหลักหลังล็อกอิน
-////Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route สำหรับแสดงข้อมูลบริษัท
-Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
+// Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
 
 // Route สำหรับหน้า findUser (แยกออกมา)
-Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
+// Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
-Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+// Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('/login', function () { return view('/auth/login'); })->name('login');
 
 Route::get('/register', function () { return view('/auth/register'); })->name('register');
 
-Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
+// Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
 
-Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
+// Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
