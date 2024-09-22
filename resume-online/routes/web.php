@@ -42,6 +42,7 @@ Route::get('/company', [CompanyController::class, 'show'])->name('company.show')
 
 // Route สำหรับหน้า findUser (แยกออกมา)
 Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
+Route::resource('users', UserController::class);
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');

@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function availableProvinces()
+    {
+        return $this->belongsToMany(Province::class, 'useravailableprovince', 'userID', 'provinceID');
+    }
 }

@@ -53,7 +53,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
+            border-radius: 20px;
+        }
+        .card-body {
+            border-top-left-radius: 20px; /* มุมซ้ายบน */
+        border-top-right-radius: 20px; /* มุมขวาบน */
         }
 
         .card-img-top {
@@ -145,18 +149,55 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        .white-box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .white-box {
+            background-color: white;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .white-box h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .white-box span {
+            font-size: 32px;
+            color: #0d6efd;
+        }
+
+
     </style>
 
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="section-title">ภาพรวม</div>
-            <div class="menu-item">โปรไฟล์</div>
-            <div class="menu-item">คำเชิญจากบริษัท</div>
-        </div>
-        <!-- Main content -->
-        <div class="flex-grow-1 p-4" style="margin-left: 220px; margin-top: 5px;">
-            <h1>ภาพรวม</h1>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="section-title">ภาพรวม</div>
+        <div class="menu-item">โปรไฟล์</div>
+        <div class="menu-item">คำเชิญจากบริษัท</div>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-grow-1 p-4" style="margin-left: 220px;">
+        <h1>ภาพรวม</h1>
+        
+        <!-- Card and White-box container in the same row -->
+        <div class="d-flex align-items-start" style="margin-top: 20px;">
             <div class="card" style="width: 18rem;">
                 <div class="card-body" style="background-color:#ddeafd; width:100%">
                     <img src="../images/01.jpg" class="card-img-top mt-3" alt="...">
@@ -164,7 +205,7 @@
                     <p>ตำแหน่ง....</p>
                     <div class="role">
                         <h6>นักศึกษาฝึกงาน</h6>
-                    </div>  
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -190,10 +231,27 @@
                     <a href="#" class="btn-edit-resume">แก้ไขเรซูเม่</a>
                 </div>
             </div>
-        </div>
 
-        <div>
+            <!-- White box container -->
+            <div class="white-box-container" style="margin-left: 20px;">
+                <div class="white-box">
+                    <h3>คำเชิญจากบริษัท</h3>
+                    <span>2</span>
+                </div>
+
+                <div class="white-box">
+                    <h3>ตอบรับคำเชิญ</h3>
+                    <span>1</span>
+                </div>
+
+                <div class="white-box">
+                    <h3>ปฏิเสธคำเชิญ</h3>
+                    <span>1</span>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
 
 @endsection
