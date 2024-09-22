@@ -1,4 +1,4 @@
-@extends('layouts.company')
+@extends('layouts.user')
 
 @section('content')
     {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
@@ -14,9 +14,12 @@
             <p class="card-text"><strong>สัญชาติ:</strong> {{ $user->nation ?? 'N/A' }}</p>
             <p class="card-text"><strong>ศาสนา:</strong> {{ $user->religion ?? 'N/A' }}</p>
             <p class="card-text"><strong>เบอร์โทรศัพท์:</strong> {{ $user->phone ?? 'N/A' }}</p>
-            <p class="card-text"><strong>ที่อยู่: {{$address->subdistrict }}, {{ $address->district }}, {{ $address->province }}</p>
-            <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
+            <p class="card-text"><strong>จังหวัด:</strong> {{ $address->province  ?? 'N/A' }}</p>
+            <p class="card-text"><strong>ที่อยู่:</strong> {{ $address->addressDetails  ?? 'N/A' }}</p>
+            <p class="card-text"><strong>รหัสไปรษณีย์:</strong> {{ $address->postcode  ?? 'N/A'}}</p>
+            <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate  ?? 'N/A' }}</p>
             <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $contact->position ?? 'N/A' }}</p>
+            <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
         </div>
     </div>
 @endsection

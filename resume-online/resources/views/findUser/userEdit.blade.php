@@ -42,22 +42,38 @@
                     <input name="phone" id="phone" type="text" value="{{ $user->phone ?? 'N/A' }}" required>
                 </div>
                 <div class="input-box">
-                    <p class="card-text"><strong>ที่อยู่: {{$address->subdistrict }}, {{ $address->district }}, {{ $address->province }}</p>
-                    <select name="" id=""> 
+                    <p class="card-text"><strong>จังหวัด:</strong> {{ $address->province  ?? 'N/A' }}</p>
+                    <select name="province" id="province"> 
                         @foreach($province as $i)
-                        <option value="">{{$i->name_in_thai}}</option>
+                        <option value="{{$i->name_in_thai}}" {{$address->province == $i->name_in_thai  ? 'selected' : ''}}>{{$i->name_in_thai}}</option>
                         @endforeach
                     </select>
                 </div>
+                <div class="input-box">
+                    <p class="card-text"><strong>ที่อยู่:</strong> </p>
+                    <input name="addressDetails" id="addressDetails" type="text" value="{{ $address->addressDetails  ?? 'N/A' }}" required>
+                </div>
+
+                <div class="input-box">
+                    <p class="card-text"><strong>รหัสไปรษณีย์:</strong> </p>
+                    <input name="postcode" id="postcode" type="text" value="{{ $address->addressDetails  ?? 'N/A' }}" required>
+                </div>
+
+
                 <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
 
                 <div class="input-box">
                     <p class="card-text"><strong>ตำแหน่ง:</strong> </p>
-                    <input name="position" id="email" type="position" value="{{ $contact->position ?? 'N/A' }}" required>
+                    <input name="position" id="position" type="text" value="{{ $contact->position ?? 'N/A' }}" required>
                 </div>
-    
+
+                <div class="input-box">
+                    <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
+                    <input name="line" id="line" type="text" value="{{ $contact->line ?? 'N/A' }}" required>
+                <div class="input-box">
+
                  <a type="submit">
-                    <button type="submit" class="btn">แก้ใข</button>
+                    <button type="submit" class="btn">ยืนยัน</button>
                 </a>
                 
             </form>

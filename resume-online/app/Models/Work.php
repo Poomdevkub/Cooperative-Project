@@ -65,7 +65,18 @@ class Work extends Model
 
         ]);
         
-        DB::table('workcontact')->where( 'workfinderID' , $w->workfinderID)->update(['position' => $data->position]);
+        DB::table('workcontact')->where( 'workfinderID' , $w->workfinderID)->update([
+            'position' => $data->position,
+            'line' => $data->line,
+
+        ]);
+
+        DB::table('workaddress')->where( 'workfinderID' , $w->workfinderID)->update([
+            'province' => $data->province,
+            'addressDetails' => $data->addressDetails,
+            'postcode' => $data->postcode,
+        
+        ]);
         
     }
 

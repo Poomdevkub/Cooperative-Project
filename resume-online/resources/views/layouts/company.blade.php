@@ -49,16 +49,19 @@
                     <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
                     <li><a class="dropdown-item" href="#">ตั้งค่าข้อมูลบริษัท</a></li>
                     <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
-                    <li><a class="dropdown-item" href="/">ออกจากระบบ</a></li>
+                    <li><form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <button type="submit" class="dropdown-item" :href="route('logout')"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                          {{ __('ออกจากระบบ') }}
+                      </button>
+                  </form></li>
                     <style>
                         .dropdown-menu{
                             margin-left: -150%;
                         }
 
-                        .dropdown-menu :hover {
-                          background-color: #0d6efd;
-                          color: white;
-                        }
                     </style>
                   </ul>
                 </li>
