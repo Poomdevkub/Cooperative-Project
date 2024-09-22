@@ -33,18 +33,19 @@
 {{--
 <div class="content">
     <div class="wrapper">
-        <form action="">
+        <form form method="POST" action="{{route('login')}}">
+            @csrf
             <h1 style="text-align: center;">Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="ชื่อผู้ใช้" required>
+                <input name="email" id="email" type="text" placeholder="email" required>
                 <i class='bx bx-user' ></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="รหัสผ่าน" required>
+                <input name="password" id="password" type="password" placeholder="รหัสผ่าน" required>
                 <i class='bx bx-lock-alt' ></i>
             </div>
 
-            <a href="{{ route('home') }}">
+            <a type="submit">
                 <button type="submit" class="btn">เข้าสู่ระบบ</button>
             </a>
 

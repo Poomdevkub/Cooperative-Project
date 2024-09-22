@@ -3,24 +3,37 @@
 @section('title','register')
 
 @section('content')
-{{--
+
+
 <div class="content">
     <div class="wrapper">
-        <form action="">
+        <form method="POST" action="{{route('register')}}">
+            @csrf
             <h1 style="text-align: center;">Register</h1>
             <div class="input-box">
-                <input type="text" placeholder="ชื่อผู้ใช้" required>
+                <input name="name" id="name" type="text" placeholder="ชื่อผู้ใช้" required>
                 <i class='bx bx-user' ></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="รหัสผ่าน" required>
+                <input name="email" id="email" type="text" placeholder="email" required>
+                <i class='bx bx-user' ></i>
+            </div>
+            <div class="input-box">
+                <input name="password" id="password" type="password" placeholder="รหัสผ่าน" required>
                 <i class='bx bx-lock-alt' ></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="ยืนยันรหัสผ่าน" required>
+                <input name="password_confirmation" id="password_confirmation"type="password" placeholder="ยืนยันรหัสผ่าน" required>
                 <i class='bx bx-lock-alt' ></i>
             </div>
-            <a href="{{ route('type') }}">
+            <div  class="input-box">
+                <select id="userrole" class="block mt-1 w-full" type="text" name="userrole" >
+                    <option hidden selected>เลือกบท</option>
+                    <option value="user" >user</option>
+                    <option value="company">Company</option>
+                </select>
+            </div>
+            <a >
                 <button type="submit" class="btn">ดำเนินการต่อ</button>
             </a>
             <div class="register-link">
@@ -108,7 +121,6 @@
     </div>
 </div>
  --}}
-
 
 {{-- <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('register') }}">
