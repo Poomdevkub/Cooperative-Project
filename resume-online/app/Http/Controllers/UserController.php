@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User2;
 use App\Models\Work;
 use Illuminate\Http\Request;
+use App\Models\Address;
 
 class UserController extends Controller
 {
@@ -44,10 +45,11 @@ class UserController extends Controller
     public function edit(){
         $a = Auth()->user()->id;
         $user = Work:: findWorkById($a);
+        $province = Address::getProvince();
 
         $address = Work::findAddressById($user->workfinderID);
         $contact = Work::findContactById($user->workfinderID);
-        return view('findUser.userEdit', compact('user','address','contact'));
+        return view('findUser.userEdit', compact('user','address','contact','province'));
     }
 
     public function update(Request $request){
@@ -59,5 +61,7 @@ class UserController extends Controller
 
         return UserController::show();
     }
+
+
 
 }

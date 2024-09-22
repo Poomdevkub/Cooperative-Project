@@ -4,7 +4,7 @@
     {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
     <div class="card">
         <div class="card-header">
-            รายละเอียดผู้ใช้ {{$user->workfinderID}}
+            รายละเอียดผู้ใช้ 
         </div>
         <div class="card-body">
             <form form method="POST" action="{{route('user.update')}}">
@@ -41,9 +41,14 @@
                     <p class="card-text"><strong>เบอร์โทรศัพท์:</strong> </p>
                     <input name="phone" id="phone" type="text" value="{{ $user->phone ?? 'N/A' }}" required>
                 </div>
-
-                <p class="card-text"><strong>ที่อยู่: {{$address->subdistrict }}, {{ $address->district }}, {{ $address->province }}</p>
-
+                <div class="input-box">
+                    <p class="card-text"><strong>ที่อยู่: {{$address->subdistrict }}, {{ $address->district }}, {{ $address->province }}</p>
+                    <select name="" id=""> 
+                        @foreach($province as $i)
+                        <option value="">{{$i->name_in_thai}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
 
                 <div class="input-box">

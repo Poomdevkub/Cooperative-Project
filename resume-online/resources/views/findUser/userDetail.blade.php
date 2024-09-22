@@ -4,7 +4,7 @@
     {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
     <div class="card">
         <div class="card-header">
-            รายละเอียดผู้ใช้ {{$user->workfinderID}}
+            รายละเอียดผู้ใช้ 
         </div>
         <div class="card-body">
             
