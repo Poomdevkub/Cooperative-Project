@@ -59,9 +59,10 @@
                     <input name="postcode" id="postcode" type="text" value="{{ $address->addressDetails  ?? 'N/A' }}" required>
                 </div>
 
-
-                <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
-
+                <div class="input-box">
+                    <p class="card-text"><strong>วันที่เกิด:</strong></p>
+                    <input name="birthdate" id="birthdate" type="date" value="{{ $user->birthdate ?? 'N/A' }}" required>
+                </div>
                 <div class="input-box">
                     <p class="card-text"><strong>ตำแหน่ง:</strong> </p>
                     <input name="position" id="position" type="text" value="{{ $contact->position ?? 'N/A' }}" required>

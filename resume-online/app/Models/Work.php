@@ -62,6 +62,7 @@ class Work extends Model
             'nation'=> $data->nation,
             'religion'=> $data->religion,
             'phone'=> $data->phone,
+            'birthdate' => $data->birthdate,
 
         ]);
         

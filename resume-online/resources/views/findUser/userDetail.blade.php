@@ -17,7 +17,7 @@
             <p class="card-text"><strong>จังหวัด:</strong> {{ $address->province  ?? 'N/A' }}</p>
             <p class="card-text"><strong>ที่อยู่:</strong> {{ $address->addressDetails  ?? 'N/A'}}</p>
             <p class="card-text"><strong>รหัสไปรษณีย์:</strong> {{ $address->postcode  ?? 'N/A'}}</p>
-            <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
+            <p class="card-text"><strong>วันที่เกิด:</strong> {{ thaidate('l j F Y', $user->birthdate ?? '2000-1-1') }}</p>
             <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $contact->position ?? 'N/A' }}</p>
             <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
             <!--<p class="card-text"><strong>สถานะการแสดง:</strong> </p>-->
