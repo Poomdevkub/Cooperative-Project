@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\userMiddle;
+use App\Http\Controllers\CompanyFollowingController;
 
 // กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
 Route::fallback(function() {
@@ -51,6 +52,9 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::post('/company/update/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
     Route::get('/user/{id}', [UserController::class, 'getByid'])->name('user.getByid');
+    Route::delete('/companyfollowing/{id}', [CompanyFollowingController::class, 'destroy'])->name('companyfollowing.destroy');
+
+
 
 
 });
@@ -87,5 +91,8 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 //Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
 
 // new
+
+Route::get('/companyfollowing', [CompanyFollowingController::class, 'index'])->middleware('auth')->name('companyfollowing.index');
+
 
 
