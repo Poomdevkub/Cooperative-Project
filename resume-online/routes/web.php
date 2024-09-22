@@ -54,3 +54,7 @@ Route::get('/register', function () { return view('/auth/register'); })->name('r
 Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
 
 Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
+
+// new
+Route::get('/company', [CompanyController::class, 'showCompany'])->middleware('auth');
+

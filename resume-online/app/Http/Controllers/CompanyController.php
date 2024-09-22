@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    /**
-     * แสดงรายละเอียดของบริษัทที่ compID = 1
-     */
-    public function show($id)
+    public function showCompany()
     {
-        // ดึงข้อมูลบริษัทที่ compID เท่ากับ $id พร้อมกับข้อมูลความสัมพันธ์
-        $company = Company::with(['companyType', 'province', 'district', 'subdistrict'])
-                          ->where('compID', $id)
-                          ->first();
+        // Get the logged-in user's ID
+        $userId = Auth::user()->id;
 
-        // เช็คว่ามีข้อมูลหรือไม่
-        if (!$company) {
-            return abort(404, 'Company not found');
-        }
+        // Fetch the company data where the userID matches the logged-in user's ID
+        $company = Company::where('userID', $userId)->first();
 
-        // ส่งข้อมูลไปยัง view
+        // Pass the company data to the view
         return view('company.show', compact('company'));
     }
 }
+

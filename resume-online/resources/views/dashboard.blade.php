@@ -12,6 +12,8 @@
                     {{ __("You're logged in!") }}
                     {{__(" name : ") }}
                     {{Auth::user()->name}}
+                    {{__(" ID : ") }}
+                    {{Auth::user()->id}}
                 </div>
             </div>
         </div>
