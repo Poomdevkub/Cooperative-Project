@@ -16,6 +16,7 @@
                             <th>ชื่อบริษัท</th>
                             <th>ประเภทการติดตาม</th>
                             <th>ชื่อบุคคลที่ค้นหา</th>
+                            <th>ดำเนินการ</th> <!-- คอลัมน์ใหม่สำหรับปุ่มลบ -->
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +28,13 @@
                                     <a href="{{ route('user.getByid', $following->workfinder->workfinderID) }}">
                                         {{ $following->workfinder->firstname }} {{ $following->workfinder->surname }}
                                     </a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('companyfollowing.destroy', $following->companyFollowingID) }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบ?')">ลบ</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

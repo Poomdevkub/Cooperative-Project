@@ -27,4 +27,13 @@ class CompanyFollowingController extends Controller
 
         return view('companyfollowing.index', compact('companyFollowings'));
     }
+
+    public function destroy($id)
+{
+    $companyFollowing = CompanyFollowing::findOrFail($id);
+    $companyFollowing->delete();
+
+    return redirect()->route('companyfollowing.index')->with('success', 'ลบข้อมูลสำเร็จ!');
+}
+
 }

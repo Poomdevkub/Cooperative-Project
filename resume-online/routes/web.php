@@ -54,9 +54,6 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::get('/user/{id}', [UserController::class, 'getByid'])->name('user.getByid');
     Route::delete('/companyfollowing/{id}', [CompanyFollowingController::class, 'destroy'])->name('companyfollowing.destroy');
 
-
-
-
 });
 
 
