@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User2;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -31,8 +32,9 @@ class UserController extends Controller
     }
 
     // แสดงรายละเอียดผู้ใช้
-    public function show($id) {
-        $user = User2::find($id);
+    public function show() {
+        $a = Auth()->user()->id;
+        $user = Work:: findWorkById($a);
         return view('findUser.userDetail', compact('user'));
     }
 

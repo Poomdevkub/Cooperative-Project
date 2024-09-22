@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\userMiddle;
 
 // กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
 Route::fallback(function() {
@@ -25,6 +26,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::middleware([userMiddle::class])->group(function () {
+    Route::get('/user', [UserController::class, 'show'])->name('user.show');
+
+
+});
+
+
 //home ของจริง
 //Route::get('/', function () { return view('jobie'); })->name('jobie');
 
@@ -45,7 +54,7 @@ Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 Route::resource('users', UserController::class);
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
-Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+//Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 
 //Route::get('/login', function () { return view('/auth/login'); })->name('login');
 

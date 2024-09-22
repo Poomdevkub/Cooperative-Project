@@ -23,5 +23,11 @@ class Work extends Model
         DB::insert('INSERT INTO workaddress (workfinderID) VALUES (?)',[$results->workfinderID]);
         
     }
+    public static function findWorkById($id)
+    {
+        return DB::table('workfinder')->where( 'userID' , $id)->first();
+
+    }
+
 }
 
