@@ -57,4 +57,9 @@ class User extends Authenticatable
     public function subdistrict() {
         return $this->belongsTo(Subdistrict::class, 'subdistrictID');
     }
+
+    public function availableProvinces()
+    {
+        return $this->belongsToMany(Province::class, 'useravailableprovince', 'userID', 'provinceID');
+    }
 }
