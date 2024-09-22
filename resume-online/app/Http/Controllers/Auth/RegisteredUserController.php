@@ -39,14 +39,11 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            //'userType' => $request->userrole,
+            'userType' => $request->userrole,
         ]);
 
         event(new Registered($user));
 
-        $edit = User::where('email',$request->email)->first();
-        $edit->userType=$request->userrole;
-        $edit->save();
 
         Auth::login($user);
 
