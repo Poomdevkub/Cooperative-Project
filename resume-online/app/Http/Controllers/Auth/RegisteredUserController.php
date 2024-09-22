@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Work;
+use App\Models\Company;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -11,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -43,7 +46,14 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+        $type = $request->userrole;
+        $us = DB::table('users')->where('email', $request->email)->first();
 
+        if($type == 'user'){
+            Work::createWork($us->id);
+        }elseif($type == 'company'){
+            Company::createComp($us->id);
+        }
 
         Auth::login($user);
 

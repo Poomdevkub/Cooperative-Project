@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Company extends Model
 {
@@ -57,5 +58,15 @@ class Company extends Model
     {
         return $this->belongsTo(Subdistrict::class, 'subdistrictID');
     }
+
+
+    public static function createComp($id)
+    {
+        
+        DB::insert('INSERT INTO company ( userID) VALUES (?)',[$id]);
+        
+    }
+
+
 
 }
