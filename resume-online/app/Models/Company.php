@@ -33,7 +33,7 @@ class Company extends Model
         'compWebsite',
         'compContactName',
         'compContactPosition',
-        'userPassID',
+        'userID',
     ];
 
     // ความสัมพันธ์กับตารางอื่น ๆ
