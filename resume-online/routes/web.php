@@ -19,6 +19,12 @@ Route::get('user-dash', function () {
 
 Auth::routes();
 
+require __DIR__.'/auth.php';
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 //home ของจริง
 //Route::get('/', function () { return view('jobie'); })->name('jobie');
 
@@ -41,7 +47,7 @@ Route::resource('users', UserController::class);
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 
-Route::get('/login', function () { return view('/auth/login'); })->name('login');
+//Route::get('/login', function () { return view('/auth/login'); })->name('login');
 
 Route::get('/register', function () { return view('/auth/register'); })->name('register');
 

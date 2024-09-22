@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\User2;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,6 +10,8 @@ class UserController extends Controller
     // แสดงหน้ารวมผู้ใช้
     public function index(Request $request)
     {
+        // ดึงข้อมูลผู้ใช้ทั้งหมดจากฐานข้อมูล
+        $users = User2::all();
         // ดึงค่าพารามิเตอร์ 'type' จากการร้องขอ
         $type = $request->input('type');
 
@@ -30,7 +32,7 @@ class UserController extends Controller
 
     // แสดงรายละเอียดผู้ใช้
     public function show($id) {
-        $user = User::find($id);
+        $user = User2::find($id);
         return view('findUser.userDetail', compact('user'));
     }
 
