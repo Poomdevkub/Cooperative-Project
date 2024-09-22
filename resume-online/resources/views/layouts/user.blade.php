@@ -16,10 +16,10 @@
             <ul class="navbar-nav">
                 
               <li class="nav-item">
-                <a class="nav-link" href="{{route('none')}}">ค้นหาผู้หางาน</a>
+                <a class="nav-link" href="{{route('login')}}">ค้นหาผู้หางาน</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('none')}}">ค้นหานักศึกษาฝึกงาน</a>
+                <a class="nav-link" href="{{route('login')}}">ค้นหานักศึกษาฝึกงาน</a>
               </li>
             </ul>
               <ul class="navbar-nav ms-auto">
@@ -39,7 +39,16 @@
                     <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
                     <li><a class="dropdown-item" href="#">โปรไฟล์</a></li>
                     <li><a class="dropdown-item" href="#">คำเชิญจากบริษัท</a></li>
-                    <li><a class="dropdown-item" href="/">ออกจากระบบ</a></li>
+                    <li><form method="POST" action="{{ route('logout') }}">
+                      @csrf
+              
+                      <button type="submit" class="dropdown-item" :href="route('logout')"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                          {{ __('ออกจากระบบ') }}
+                      </button>
+                  </form></li>
+
                     <style>
                         .dropdown-menu{
                             margin-left: -150%;

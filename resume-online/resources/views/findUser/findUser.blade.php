@@ -45,32 +45,20 @@
 
     <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 5%">
         @foreach($users as $user)
+            @php
+                $contact = App\Models\Work::findContactById($user->workfinderID);
+            @endphp
             <div class="col mb-4">
                 <div class="card h-100" style="width: 286px;">
                     <img src="images/login_bg.jpg" class="card-img-top" alt="ภาพ" style="width: 286px; height: 286px; object-fit: cover;">
                     <div class="card-body">
-                        <h4 class="card-title"><strong>{{ $user->userFirstname }} {{ $user->userSurname }}</strong></h4>
+                        <h4 class="card-title"><strong>{{ $user->firstname }} {{ $user->surname }}</strong></h4>
+
 
                         <!-- แสดงตำแหน่ง -->
-                        @if($user->userPosition)
-                            <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $user->userPosition }}</p>
-                        @else
-                            <p class="card-text"><strong>ตำแหน่ง:</strong> ไม่ระบุ</p>
-                        @endif
+                        <p class="card-text"><strong>ตำแหน่ง: </strong> {{ $contact->position }}</p>
 
-                        <!-- แสดงจังหวัดที่สนใจ -->
-                        <p class="card-text"><strong>จังหวัดที่สนใจ :</strong>
-                            @if($user->availableProvinces->count() > 0)
-                                @foreach($user->availableProvinces as $province)
-                                    {{ $province->name_th }}@if(!$loop->last) , @endif
-                                @endforeach
-                            @else
-                                ไม่ระบุ
-                            @endif
-                        </p>
-
-                        <button type="button" class="btn btn-secondary" disabled>{{ ucfirst($user->userType) }}</button>
-                        <a href="{{ route('users.show', $user->userID) }}" class="btn btn-primary">ดูรายละเอียด</a>
+                        <a href="{{ route('user.getByid', $user->workfinderID) }}" class="btn btn-primary">ดูรายละเอียด</a>
                     </div>
                 </div>
             </div>

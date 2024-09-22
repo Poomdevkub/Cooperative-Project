@@ -50,6 +50,7 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::get('/company/edit/{id}', [CompanyController::class, 'edit'])->name('company.edit');
     Route::post('/company/update/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
+    Route::get('/user/{id}', [UserController::class, 'getByid'])->name('user.getByid');
 
 
 });
@@ -79,7 +80,7 @@ Route::resource('users', UserController::class);
 
 //Route::get('/login', function () { return view('/auth/login'); })->name('login');
 
-Route::get('/register', function () { return view('/auth/register'); })->name('register');
+//Route::get('/register', function () { return view('/auth/register'); })->name('register');
 
 Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
 

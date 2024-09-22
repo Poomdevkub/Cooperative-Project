@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.company')
 
 @section('content')
     {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
@@ -17,11 +17,6 @@
             <p class="card-text"><strong>ที่อยู่: {{$address->subdistrict }}, {{ $address->district }}, {{ $address->province }}</p>
             <p class="card-text"><strong>วันที่เกิด:</strong> {{ $user->birthdate }}</p>
             <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $contact->position ?? 'N/A' }}</p>
-            <!--<p class="card-text"><strong>สถานะการแสดง:</strong> </p>-->
-            <!-- เพิ่มข้อมูลเพิ่มเติมตามต้องการ -->
-            <a href="{{route('user.edit')}}">
-                <button type="submit" class="btn">แก้ใข</button>
-            </a>
         </div>
     </div>
 @endsection
