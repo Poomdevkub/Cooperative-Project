@@ -19,6 +19,14 @@ Route::get('user-dash', function () {
     return view('user/user-dash');
 });
 
+Route::get('user-profile', function () {
+    return view('user/user-profile');
+});
+
+Route::get('user-invite', function () {
+    return view('user/user-invite');
+});
+
 Auth::routes();
 
 require __DIR__.'/auth.php';
