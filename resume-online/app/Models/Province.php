@@ -11,4 +11,9 @@ class Province extends Model {
     public function districts() {
         return $this->hasMany(District::class, 'provinceID');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'useravailableprovince', 'provinceID', 'userID');
+    }
 }

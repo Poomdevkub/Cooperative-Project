@@ -16,14 +16,11 @@
 
         .sidebar {
             height: calc(100vh - 70px);
-            /* ปรับความสูง Sidebar ให้อยู่ภายใต้ Navbar */
             background-color: #f8f9fa;
             padding: 1rem;
             width: 200px;
             position: fixed;
-            /* ทำให้ sidebar อยู่ติดด้านซ้าย */
             top: 70px;
-            /* ปรับให้เริ่มจากด้านล่างของ Navbar */
             left: 0;
         }
 
@@ -38,15 +35,12 @@
             margin-top: 1rem;
             font-size: 1.2rem;
             transition: background-color 0.3s ease;
-            /* เพิ่ม transition สำหรับ hover */
         }
 
         .sidebar .menu-item:hover {
             background-color: #d9ecfb;
             color: black;
-            /* ตัวอักษรเป็นสีดำเมื่อ hover */
             border-radius: 0.25rem;
-            /* เพิ่มมุมโค้งเมื่อ hover */
             cursor: pointer;
         }
 
@@ -59,6 +53,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border-radius: 20px;
+        }
+        .card-body {
+            border-top-left-radius: 20px; /* มุมซ้ายบน */
+            border-top-right-radius: 20px; /* มุมขวาบน */
         }
 
         .card-img-top {
@@ -69,10 +68,120 @@
         }
 
         .card-body {
-            text-align: center; /* จัดข้อความใน card ให้อยู่ตรงกลาง */
+            text-align: center;
             justify-content: center;
             align-content: center;
         }
+
+        .role {
+            background: rgb(246, 246, 246);
+            margin-top: 5px;
+            outline-color: black;
+            width: 60%;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 10px 0;
+        }
+
+        .list-item i {
+            margin-right: 10px;
+            color: green;
+        }
+
+        /* Slide toggle button */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .btn-edit-resume {
+            background: linear-gradient(to right, #f77062, #fe5196);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .white-box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .white-box {
+            background-color: white;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .white-box h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .white-box span {
+            font-size: 32px;
+            color: #0d6efd;
+        }
+
+
     </style>
 
     <div class="d-flex">
@@ -86,20 +195,55 @@
         <div class="flex-grow-1 p-4" style="margin-left: 220px; margin-top: 5px;">
             <h1>ภาพรวม</h1>
             <div class="card" style="width: 18rem;">
-                <img src="../images/01.jpg" class="card-img-top mt-5" alt="...">
+                <div class="card-body" style="background-color:#ddeafd; width:100%">
+                    <img src="../images/01.jpg" class="card-img-top mt-3" alt="...">
+                    <h5 class="card-title">ชื่อ-นามสกุล...</h5>
+                    <p>ตำแหน่ง....</p>
+                    <div class="role">
+                        <h6>นักศึกษาฝึกงาน</h6>
+                    </div>  
+                </div>
+
                 <div class="card-body">
-                    <h5 class="card-title">ตำแหน่ง.....</h5>
-                    <div class="card" style="width: 50%">
-                      <h6 class="mt-1">นักศึกษาฝึกงาน</h6>
+                    <div class="list-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>ข้อมูลส่วนตัว</p>
                     </div>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="list-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>เรซูเม่</p>
+                    </div>
+                    <div class="list-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>ความต้องการ</p>
+                    </div>
+                    <div class="list-item">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <p style="margin-left: 10px;">เผยแพร่เรซูเม่</p>
+                    </div>
+                    <a href="#" class="btn-edit-resume">แก้ไขเรซูเม่</a>
                 </div>
             </div>
         </div>
 
-        <div>
+        <div class="white-box-container">
+            <div class="white-box">
+                <h3>คำเชิญจากบริษัท</h3>
+                <span>2</span>
+            </div>
+    
+            <div class="white-box">
+                <h3>ตอบรับคำเชิญ</h3>
+                <span>1</span>
+            </div>
+    
+            <div class="white-box">
+                <h3>ปฏิเสธคำเชิญ</h3>
+                <span>1</span>
+            </div>
         </div>
     </div>
 
