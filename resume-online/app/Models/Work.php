@@ -28,6 +28,36 @@ class Work extends Model
         return DB::table('workfinder')->where( 'userID' , $id)->first();
 
     }
+    public static function findAddressById($id)
+    {
+        return DB::table('workaddress')->where( 'workfinderID' , $id)->first();
+
+    }
+    public static function findContactById($id)
+    {
+        return DB::table('workcontact')->where( 'workfinderID' , $id)->first();
+
+    }
+    
+    public static function updateWork($id,$data)  {
+        $w =  DB::table('workfinder')->where( 'userID' , $id)->first();
+        $a =  DB::table('workaddress')->where( 'workfinderID' , $w->workfinderID)->first();
+        $c =  DB::table('workcontact')->where( 'workfinderID' , $w->workfinderID)->first();
+
+
+        DB::table('workfinder')->where( 'userID' , $id)->update([
+            'firstname'=> $data->firstname,
+            'surname'=> $data->surname,
+            'sex'=> $data->sex,
+            'nation'=> $data->nation,
+            'religion'=> $data->religion,
+            'phone'=> $data->phone,
+
+        ]);
+        
+        DB::table('workcontact')->where( 'workfinderID' , $w->workfinderID)->update(['position' => $data->position]);
+        
+    }
 
 }
 

@@ -35,7 +35,29 @@ class UserController extends Controller
     public function show() {
         $a = Auth()->user()->id;
         $user = Work:: findWorkById($a);
-        return view('findUser.userDetail', compact('user'));
+
+        $address = Work::findAddressById($user->workfinderID);
+        $contact = Work::findContactById($user->workfinderID);
+        return view('findUser.userDetail', compact('user','address','contact'));
+    }
+
+    public function edit(){
+        $a = Auth()->user()->id;
+        $user = Work:: findWorkById($a);
+
+        $address = Work::findAddressById($user->workfinderID);
+        $contact = Work::findContactById($user->workfinderID);
+        return view('findUser.userEdit', compact('user','address','contact'));
+    }
+
+    public function update(Request $request){
+        $a = Auth()->user()->id;
+        
+        $data = $request;
+
+        Work::updateWork($a,$data);
+
+        return UserController::show();
     }
 
 }

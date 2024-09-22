@@ -29,6 +29,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware([userMiddle::class])->group(function () {
     Route::get('/user', [UserController::class, 'show'])->name('user.show');
+    Route::get('/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/update', [UserController::class, 'update'])->name('user.update');
 
 
 });
