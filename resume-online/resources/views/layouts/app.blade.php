@@ -32,6 +32,9 @@
                 <a class="nav-link" href="{{route('login')}}">ค้นหานักศึกษาฝึกงาน</a>
               </li>
             </ul>
+
+            @if (!Auth::check())
+            
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('login')}}">เข้าสู่ระบบ</a>
@@ -41,7 +44,20 @@
                         <button type="button" class="btn btn-primary btn-sm">สมัครสมาชิก</button>
                     </a>
                 </li>
-            </ul>
+            </ul>        
+            @else
+
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href=""></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="">
+                      <button type="button" class="btn "></button>
+                  </a>
+              </li>
+                
+            @endif
           </div>
         </div>
       </nav>
