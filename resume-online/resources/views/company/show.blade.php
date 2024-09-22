@@ -12,14 +12,14 @@
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>รหัสบริษัท (compID):</strong> {{ $company->compID }}</li>
+                    {{--<li class="list-group-item"><strong>รหัสบริษัท (compID):</strong> {{ $company->compID }}</li>--}}
                     <li class="list-group-item"><strong>ชื่อบริษัท:</strong> {{ $company->compName ?? 'ไม่ระบุ' }}</li>
-                    <li class="list-group-item"><strong>ประเภทบริษัท:</strong> {{ $company->companyType->companyTypeName ?? 'ไม่ระบุ' }}</li>
-                    <li class="list-group-item"><strong>จังหวัด:</strong> {{ $company->province->name_th ?? 'ไม่ระบุ' }}</li>
-                    <li class="list-group-item"><strong>อำเภอ:</strong> {{ $company->district->name_th ?? 'ไม่ระบุ' }}</li>
-                    <li class="list-group-item"><strong>ตำบล:</strong> {{ $company->subdistrict->name_th ?? 'ไม่ระบุ' }}</li>
+                    {{--<li class="list-group-item"><strong>ประเภทบริษัท:</strong> {{ $company->companyType->companyTypeName ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>จังหวัด:</strong> {{ $company->provinces->name_in_thai ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>อำเภอ:</strong> {{ $company->districts->name_in_thai ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>ตำบล:</strong> {{ $company->subdistricts->name_in_thai ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>รายละเอียดบริษัท:</strong> {{ $company->compDescription ?? 'ไม่ระบุ' }}</li>
-                    <li class="list-group-item"><strong>โมเดลบริษัท:</strong> {{ $company->compModel ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>โมเดลบริษัท:</strong> {{ $company->compModel ?? 'ไม่ระบุ' }}</li> --}}
                     <li class="list-group-item"><strong>ที่อยู่บริษัท:</strong> {{ $company->compAddress ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>โทรศัพท์บริษัท:</strong> {{ $company->compPhone ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>Email บริษัท:</strong> {{ $company->compEmail ?? 'ไม่ระบุ' }}</li>
