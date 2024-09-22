@@ -21,5 +21,15 @@
             <p class="card-text"><strong>ตำแหน่ง:</strong> {{ $contact->position ?? 'N/A' }}</p>
             <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
         </div>
+        <div><!--profile-->
+            <img src="{{'storage/public/'.Auth::user()->namePicture}}">
+        </div>
+
+        <div><!--resume-->
+            @php
+                $path = App\Models\Work::findWorkById(Auth::user()->id);
+            @endphp
+            <img src="{{'storage/public/resume/'.$path->nameResume}}">
+        </div>
     </div>
 @endsection
