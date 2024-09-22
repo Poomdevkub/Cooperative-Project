@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\companyMiddle;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,16 @@ Route::middleware([userMiddle::class])->group(function () {
 });
 
 
+Route::middleware([companyMiddle::class])->group(function () {
+    Route::get('/company', [CompanyController::class, 'showCompany'])->name('company.show');
+    Route::get('/company/edit/{id}', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::post('/company/update/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
+
+
+});
+
+
 //home ของจริง
 //Route::get('/', function () { return view('jobie'); })->name('jobie');
 
@@ -49,7 +60,7 @@ Route::redirect('/', '/jobie'); // redirect ไปยังหน้า home
 ////Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route สำหรับแสดงข้อมูลบริษัท
-Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
+//Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
 
 // Route สำหรับหน้า findUser (แยกออกมา)
 Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
@@ -64,11 +75,8 @@ Route::get('/register', function () { return view('/auth/register'); })->name('r
 
 Route::get('/register/type', function () { return view('/auth/type'); })->name('type');
 
-Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
+//Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
 
 // new
-Route::get('/company', [CompanyController::class, 'showCompany'])->middleware('auth')->name('company.show');
-Route::get('/company/edit/{id}', [CompanyController::class, 'edit'])->middleware('auth')->name('company.edit');
-Route::post('/company/update/{id}', [CompanyController::class, 'update'])->middleware('auth')->name('company.update');
-Route::get('/company/{id}', [CompanyController::class, 'show'])->middleware('auth')->name('company.show');
+
 

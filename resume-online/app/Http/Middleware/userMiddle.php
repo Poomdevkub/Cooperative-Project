@@ -16,14 +16,19 @@ class userMiddle
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!(Auth::user()->userType === 'user') || 0){
-            
-            return redirect()->route('home');
-        }
-        elseif(!Auth::check()){
+
+
+        if(!Auth::check()){
             return redirect()->route('login');
 
         }
+        elseif(!(Auth::user()->userType === 'user') || 0){
+            
+            return redirect()->route('home');
+        }
+        
+        
+        
         return $next($request);
     }
 }
