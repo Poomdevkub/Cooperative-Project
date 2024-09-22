@@ -16,7 +16,7 @@ class UserController extends Controller
         $type = $request->input('type');
 
         // เริ่มต้นการ Query
-        $query = User::with(['province', 'availableProvinces']);
+        $query = User2::with(['province', 'availableProvinces']);
 
         // ถ้ามีการระบุประเภทผู้ใช้, เพิ่มเงื่อนไขการกรอง
         if ($type && in_array($type, ['work', 'intern'])) {
