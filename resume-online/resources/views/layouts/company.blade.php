@@ -22,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">JOBIE</a>
+            <a class="navbar-brand" href="/">JOBIE</a>
             <ul class="navbar-nav">
 
                 <li class="nav-item">
@@ -32,7 +32,7 @@
                 <a class="nav-link" href="{{ route('findUser', ['workType' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
               </li>
             </ul>
-              <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="pic">
@@ -62,10 +62,25 @@
                             margin-left: -150%;
                         }
 
-                            </style>
-                        </ul>
-                    </li>
-                </ul>
+                        <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('ออกจากระบบ') }}
+                            </button>
+                        </form>
+                        </li>
+                        <style>
+                            .dropdown-menu{
+                                margin-left: -150%;
+                            }
+
+                        </style>
+                    </ul>
+                </li>
+            </ul>
           {{-- </div> --}}
         </div>
     </nav>

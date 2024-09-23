@@ -22,7 +22,6 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
-
             <a class="navbar-brand" href="{{ route('home') }}">JOBIE</a>
 
             <ul class="navbar-nav">
