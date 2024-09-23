@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
       body {
-          background-image: url('images/homie.svg'); /* ลิงก์ไปยังรูปภาพ */
+          background-image: url('../images/homie.svg'); /* ลิงก์ไปยังรูปภาพ */
           background-size: cover; /* ทำให้รูปภาพครอบคลุมทั้งหน้าจอ */
           background-position: center; /* จัดกึ่งกลางรูปภาพ */
           background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
