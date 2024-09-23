@@ -13,6 +13,25 @@
         </select>
     </form>
 
+    <!--BJK seARch-->
+    <form action="{{ route('searchUser') }}" method="POST" class="mb-4">
+        @csrf
+        <input type="hidden" name="workType" id="workType" value="{{$workType}}">
+        <label for="search">ค้นหาด้วยจังหวัด:</label>
+        <select name="province" id="province" class="form-select">
+            <option value="" selected>-----</option>
+            @foreach($province as $i)
+                <option value="{{$i->name_in_thai}}">
+                    {{$i->name_in_thai}}
+                </option>
+            @endforeach
+        </select>
+
+        <a type="submit" style="margin-top: 2%">
+            <button type="submit" class="btn btn-primary">บันทึก</button>
+        </a>
+    </form>
+
     <!-- แสดงข้อมูลในรูปแบบการ์ด -->
     <div class="row row-cols-1 row-cols-md-3 g-4"> <!-- ใช้ g-4 เพื่อเพิ่มการจัดระเบียบ -->
         @foreach ($users as $user)

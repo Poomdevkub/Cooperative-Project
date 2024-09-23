@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Workfinder;
 use App\Models\Workcontact;
 use App\Models\Workaddress;
+use App\Models\Address;
+use App\Models\Work;
 
 class FindUserController extends Controller
 {
@@ -21,6 +24,22 @@ class FindUserController extends Controller
             ->where('workfinder.workType', $workType)
             ->get();
 
-        return view('findUser.index', compact('users', 'workType'));
+        $province = Address::getProvince();
+
+        return view('findUser.index', compact('users', 'workType','province'));
+    }
+
+    public function search(Request $request)
+    {
+        // รับค่าการกรองจาก workType
+        $workType = $request->workType; // ค่าเริ่มต้นเป็น intern
+
+        // ดึงข้อมูลจากฐานข้อมูล
+        $users = Work::searchUser($workType,$request->province);
+        
+
+        $province = Address::getProvince();
+
+        return view('findUser.index', compact('users', 'workType','province'));
     }
 }

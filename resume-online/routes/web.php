@@ -58,6 +58,7 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::delete('/companyfollowing/{id}', [CompanyFollowingController::class, 'destroy'])->name('companyfollowing.destroy');
     Route::get('/companyfollowing', [CompanyFollowingController::class, 'index'])->middleware('auth')->name('companyfollowing.index');
     Route::get('/findUser', [FindUserController::class, 'index'])->name('findUser');
+    Route::post('/search', [FindUserController::class, 'search'])->name('searchUser');
 
 });
 

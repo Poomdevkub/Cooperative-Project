@@ -97,5 +97,13 @@ class Work extends Model
         ]);
     }
 
+    public static function searchUser($workType,$province){
+        $query = "SELECT * from (SELECT b.* , a.province FROM workaddress as a LEFT JOIN workfinder as b on a.workfinderID = b.workfinderID where province like '%$province%')as e WHERE workType = '$workType';";
+        $users = DB::select($query);
+
+         return $users;
+
+    }
+
 }
 
