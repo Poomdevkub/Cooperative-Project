@@ -103,11 +103,11 @@
                         {{-- ความต้องการในการหางานหรือที่ฝึกงาน --}}
                         <div class="col-6">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="workType" id="inlineRadio1" value="intern" {{ ($user->workType=="intern")? "checked" : "" }}>
+                                <input class="form-check-input" type="radio" name="workType" id="inlineRadio1" value="work" {{ ($user->workType=="work")? "checked" : "" }}>
                                 <label class="form-check-label" for="inlineRadio1">หางาน</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="workType" id="inlineRadio2" value="work" {{ ($user->workType=="work")? "checked" : "" }}>
+                                <input class="form-check-input" type="radio" name="workType" id="inlineRadio2" value="intern" {{ ($user->workType=="intern")? "checked" : "" }}>
                                 <label class="form-check-label" for="inlineRadio2">หาที่ฝึกงาน</label>
                             </div>
                         </div>
