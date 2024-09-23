@@ -98,11 +98,8 @@ class Work extends Model
     }
 
     public static function searchUser($workType,$province){
-        $query = "SELECT * from (SELECT b.* , a.province FROM workaddress as a LEFT JOIN workfinder as b on a.workfinderID = b.workfinderID where province like '%$province%')as e WHERE workType = '$workType';";
-       
-        //$users = DB::select($query);
-
-        $user2 = DB::table('workaddress')
+        
+        $users = DB::table('workaddress')
         ->leftjoin( 'workcontact', 'workaddress.workfinderID', '=', 'workcontact.workfinderID')
         ->leftjoin('workfinder', 'workaddress.workfinderID', '=', 'workfinder.workfinderID')
         ->select('workfinder.*', 'workcontact.position', 'workaddress.province')
@@ -110,7 +107,7 @@ class Work extends Model
         ->where('workaddress.province',($province != '')? '=':'like',($province != '')? $province:'%%')
         ->get();
 
-        return $user2;
+        return $users;
 
     }
 

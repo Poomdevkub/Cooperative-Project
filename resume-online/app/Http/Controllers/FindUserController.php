@@ -36,7 +36,6 @@ class FindUserController extends Controller
 
         // ดึงข้อมูลจากฐานข้อมูล
         $users = Work::searchUser($workType,$request->province);
-        dd($users);
         
 
         $province = Address::getProvince();
