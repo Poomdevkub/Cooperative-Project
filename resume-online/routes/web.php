@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
 use App\Http\Middleware\userMiddle;
 use App\Http\Controllers\CompanyFollowingController;
+use App\Http\Controllers\FindUserController;
 
 // กรณีผู้ใช้ระบุpathไม่ถูกต้อง แล้วจะตอบกลับไปยังฝั่งผู้ใช้ (client)
 Route::fallback(function() {
@@ -57,6 +58,8 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
     Route::get('/user/{id}', [UserController::class, 'getByid'])->name('user.getByid');
     Route::delete('/companyfollowing/{id}', [CompanyFollowingController::class, 'destroy'])->name('companyfollowing.destroy');
+    Route::get('/companyfollowing', [CompanyFollowingController::class, 'index'])->middleware('auth')->name('companyfollowing.index');
+    Route::get('/findUser', [FindUserController::class, 'index'])->name('findUser');
 
 });
 
@@ -77,7 +80,7 @@ Route::redirect('/', '/jobie'); // redirect ไปยังหน้า home
 //Route::get('/company', [CompanyController::class, 'show'])->name('company.show');
 
 // Route สำหรับหน้า findUser (แยกออกมา)
-Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
+//Route::get('/findUser', [UserController::class, 'index'])->name('findUser');
 Route::resource('users', UserController::class);
 
 // Route สำหรับดูรายละเอียดผู้ใช้แต่ละคน
@@ -93,7 +96,11 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 
 // new
 
-Route::get('/companyfollowing', [CompanyFollowingController::class, 'index'])->middleware('auth')->name('companyfollowing.index');
+
+// Route::get('/user/{id}', function ($id) {
+//     // หน้ารายละเอียดของผู้ใช้ สามารถเขียน logic เพิ่มเติมที่นี่
+//     return "User ID: " . $id;
+// });
 
 
 

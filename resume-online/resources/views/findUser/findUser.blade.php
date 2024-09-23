@@ -22,7 +22,7 @@
         </div>
     </form> -->
 
-    <div class="container-fluid"> <!--ค้นหาตำแหน่ง-->
+    {{-- <div class="container-fluid"> <!--ค้นหาตำแหน่ง-->
         <form class="d-flex" role="search" style="margin-top: 5%">
             <input class="form-control me-2" type="search" placeholder="ค้นหาตำแหน่งงาน" aria-label="Search">
             <button class="btn btn-primary" type="submit">ค้นหา</button>
@@ -41,7 +41,7 @@
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
-  </select>
+  </select> --}}
 
     <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 5%">
         @foreach($users as $user)
