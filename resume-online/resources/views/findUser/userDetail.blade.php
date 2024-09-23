@@ -24,7 +24,7 @@
 
             {{-- ทำให้ลิ้งค์ไปหน้าอัพรูปด้วยจ้า --}}
             <div style="margin-top: 2%; display:flex; justify-content:center;">
-                <a href="{{route('user.edit')}}">
+                <a href="{{route('user.uploadP')}}">
                     <button type="submit" class="btn btn-primary btn-lg">เปลี่ยนรูปโปรไฟล์</button>
                 </a>
             </div>
@@ -90,7 +90,7 @@
             
                         {{-- ทำให้ลิ้งค์ไปหน้าอัพรูปเรซูเม่ด้วยจ้า --}}
                         <div style="margin-top: 2%; display:flex; justify-content:center;">
-                            <a href="{{route('user.edit')}}">
+                            <a href="{{route('user.uploadR')}}">
                                 <button type="submit" class="btn btn-primary btn-lg">เปลี่ยนรูปเรซูเม่</button>
                             </a>
                         </div>
