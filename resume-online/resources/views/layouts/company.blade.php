@@ -22,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">JOBIE</a>
+          <a class="navbar-brand" href="/">JOBIE</a>
             <ul class="navbar-nav">
 
                 <li class="nav-item">

@@ -1,5 +1,6 @@
-
 @extends('layouts.company')
+@section('title','Edit')
+
 
 @section('content')
 <div class="container" style="display: flex; justify-content: center;" >
@@ -10,18 +11,18 @@
 <div class="card" style="margin-top: 2%; width: 55%;">
     <div class="card-header bg-primary text-white">
 
-        <h2><strong>แก้ไขข้อมูลบริษัท</strong></h2> 
+        <h2><strong>แก้ไขข้อมูลบริษัท</strong></h2>
 
     </div>
-    
+
     <div class="card-body">
         <form action="{{ route('company.update', $company->compID) }}" method="POST">
             @csrf
 
                 <div class="row mt-4">
-                    
+
                     <h3>ข้อมูลบริษัท</h3>
-                    
+
                     {{-- ชื่อบริษัท --}}
                     <div class="col-6">
                         <label class="form-label">ชื่อบริษัท</label>
@@ -33,7 +34,7 @@
                         <label class="form-label" for="compDescription">รายละเอียดของบริษัท</label>
                         <input type="text" class="form-control" name="compDescription" class="form-control" required value="{{ $company->compDescription }}">
                     </div>
-                    
+
                     <h3 style="margin-top: 5%">ข้อมูลที่อยู่</h3>
 
                     {{-- ที่อยู่ --}}
@@ -41,7 +42,7 @@
                         <label class="form-label" for="compAddress">ที่อยู่</label>
                         <input type="text" name="compAddress" class="form-control" value="{{ $company->compAddress }}">
                     </div>
-                    
+
 
                     <h3 style="margin-top: 5%">ข้อมูลติดต่อ</h3>
 
@@ -68,7 +69,7 @@
                         <label class="form-label" for="compContactName">ชื่อผู้ติดต่อ</label>
                         <input type="text" name="compContactName" class="form-control" value="{{ $company->compContactName }}">
                     </div>
-                
+
 
                     {{-- ตำแหน่งผู้ติดต่อ --}}
                     <div class="col-12">
@@ -76,7 +77,7 @@
                         <input type="text" name="compContactPosition" class="form-control" value="{{ $company->compContactPosition }}">
                     </div>
 
-    
+
                      <a type="submit" style="margin-top: 2%">
                         <button type="submit" class="btn btn-primary">บันทึก</button>
                     </a>
@@ -86,7 +87,7 @@
                         }
                     </style>
 
-                
+
                 </div>
 
 {{-- <div class="container">
@@ -130,7 +131,7 @@
     </form>
 </div> --}}
         </form>
-            
+
     </div>
 </div>
 @endsection
