@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.company')
 
 @section('content')
     <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a>
