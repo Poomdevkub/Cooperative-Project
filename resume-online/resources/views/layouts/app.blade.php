@@ -22,15 +22,17 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="{{ route('home') }}">JOBIE</a>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('findUser', ['workType' => 'work']) }}">ค้นหาผู้หางาน</a>
                 </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('findUser', ['workType' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('findUser', ['workType' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
+                </li>
+
             </ul>
 
             @if (!Auth::check())

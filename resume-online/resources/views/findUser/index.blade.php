@@ -1,4 +1,5 @@
 @extends('layouts.company')
+@section('title','findUser')
 
 @section('content')
 <div class="container">
