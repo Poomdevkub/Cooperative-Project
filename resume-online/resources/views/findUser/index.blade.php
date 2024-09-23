@@ -19,15 +19,15 @@
         <input type="hidden" name="workType" id="workType" value="{{$workType}}">
         <label for="search">ค้นหาด้วยจังหวัด:</label>
         <select name="province" id="province" class="form-select">
-            <option value="" selected>---ไม่เลือก---</option>
+            <option value="" {{($oldProvince=='')?'selected':''}}>---ไม่เลือก---</option>
             @foreach($province as $i)
-                <option value="{{$i->name_in_thai}}">
+                <option value="{{$i->name_in_thai}}" {{($oldProvince==$i->name_in_thai)?'selected':''}}>
                     {{$i->name_in_thai}}
                 </option>
             @endforeach
         </select>
         <label for="search">ค้นหาด้วยตำแหน่ง</label>
-        <input type="text" name="position" id="position" class="form-text" value="">
+        <input type="text" name="position" id="position" class="form-text" value="{{$oldPosition}}">
 
         <a type="submit" style="margin-top: 2%">
             <button type="submit" class="btn btn-primary">บันทึก</button>
