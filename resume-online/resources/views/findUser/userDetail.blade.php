@@ -4,7 +4,13 @@
 
 @section('content')
     {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
-    <div class="card" style="margin-top: 5%">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <div class="card" style="margin-top: 5%; width: 65%;">
         <div class="card-header bg-primary text-white">
             <h2><strong>โปรไฟล์</strong></h2>
         </div>
@@ -36,7 +42,7 @@
             <div style="display: flex; justify-content: center;">
                 <div class="card border-info mb-3 " style="width: 80%; margin-top: 7%;">
                     <div class="card-body">
-                        <h1 class="card-title">{{ $user->firstname ?? 'N/A' }} {{ $user->surname ?? 'N/A' }}</h1>
+                        <h1 class="card-title" style="text-align: center;">{{ $user->firstname ?? 'N/A' }} {{ $user->surname ?? 'N/A' }}</h1>
                         <p class="card-text"><strong>Email:</strong> {{ Auth::user()->email ?? 'N/A' }}</p>
                         <p class="card-text"><strong>เพศ:</strong> {{ ucfirst($user->sex ?? 'N/A') }}</p>
                         <p class="card-text"><strong>สัญชาติ:</strong> {{ $user->nation ?? 'N/A' }}</p>

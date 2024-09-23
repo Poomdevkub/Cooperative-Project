@@ -2,12 +2,12 @@
 @extends('layouts.company')
 
 @section('content')
-<div class="container" >
-    {{-- พื้นหลังไม่ขึ้น --}}
+<div class="container" style="display: flex; justify-content: center;" >
+
 
 {{-- <a href="{{ route('findUser') }}" class="btn btn-info mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
 
-<div class="card" style="margin-top: 2%">
+<div class="card" style="margin-top: 2%; width: 55%;">
     <div class="card-header bg-primary text-white">
 
         <h2><strong>แก้ไขข้อมูลบริษัท</strong></h2> 
