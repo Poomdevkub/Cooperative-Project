@@ -23,26 +23,23 @@ class FindUserController extends Controller
             ->join('workaddress', 'workfinder.workfinderID', '=', 'workaddress.workfinderID')
             ->where('workfinder.workType', $workType)
             ->get();
-        $oldPosition = '';
-        $oldProvince = '';
 
         $province = Address::getProvince();
 
-        return view('findUser.index', compact('users', 'workType','province','oldPosition','oldProvince'));
+        return view('findUser.index', compact('users', 'workType','province'));
     }
 
     public function search(Request $request)
     {
-        
-        $workType = $request->workType; 
-        $oldPosition = $request->position;
-        $oldProvince = $request->province;
+        // รับค่าการกรองจาก workType
+        $workType = $request->workType; // ค่าเริ่มต้นเป็น intern
+
         // ดึงข้อมูลจากฐานข้อมูล
         $users = Work::searchUser($workType,$request->province,$request->position);
         
 
         $province = Address::getProvince();
 
-        return view('findUser.index', compact('users', 'workType','province','oldPosition','oldProvince'));
+        return view('findUser.index', compact('users', 'workType','province'));
     }
 }

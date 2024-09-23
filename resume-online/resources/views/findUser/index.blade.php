@@ -1,32 +1,36 @@
-@extends('layouts.company')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
+    <!-- <h1>Find User</h1> -->
+
+    <!-- ฟอร์มสำหรับเลือกประเภทงาน -->
+    <form action="{{ route('findUser') }}" method="GET" class="mb-4">
+        <label for="workType">Filter by Work Type:</label>
+        <select name="workType" id="workType" onchange="this.form.submit()">
+            <option value="intern" {{ $workType == 'intern' ? 'selected' : '' }}>Intern</option>
+            <option value="work" {{ $workType == 'work' ? 'selected' : '' }}>Work</option>
+        </select>
+    </form>
 
     <!--BJK seARch-->
-    <h1 style="color: aliceblue; margin-top:5%"><strong>ค้นหาผู้หางาน</strong></h1>
-
-    <form action="{{ route('searchUser') }}" method="POST" class="mb-4" style=" width:500px; ">
+    <form action="{{ route('searchUser') }}" method="POST" class="mb-4">
         @csrf
         <input type="hidden" name="workType" id="workType" value="{{$workType}}">
-
-        <select name="province" id="province" class="form-select" style="width: 110%; margin-top: 3%;display: grid; justify-items: end;">
-            <option value="" {{($oldProvince=='')?'selected':''}}>ค้นหาด้วยจังหวัด</option>
+        <label for="search">ค้นหาด้วยจังหวัด:</label>
+        <select name="province" id="province" class="form-select">
+            <option value="" selected>---ไม่เลือก---</option>
             @foreach($province as $i)
-                <option value="{{$i->name_in_thai}}" {{($oldProvince==$i->name_in_thai)?'selected':''}}>
+                <option value="{{$i->name_in_thai}}">
                     {{$i->name_in_thai}}
                 </option>
             @endforeach
         </select>
-        <input class="form-control me-2" type="text" placeholder="ค้นหาตำแหน่งงาน" aria-label="Search" name="position" id="position" class="form-text" value="{{$oldPosition}}">
-            <style>
-                .form-control{
-                    width: 110%;
-                    margin-top: 3%;
-                }
-            </style>
-        <a type="submit" style="margin-top:2%;">
-            <button type="submit" class="btn btn-primary">ค้นหา</button>
+        <label for="search">ค้นหาด้วยตำแหน่ง</label>
+        <input type="text" name="position" id="position" class="form-text" value="">
+
+        <a type="submit" style="margin-top: 2%">
+            <button type="submit" class="btn btn-primary">บันทึก</button>
         </a>
     </form>
 
@@ -35,11 +39,7 @@
         @foreach ($users as $user)
             <div class="col">
                 <div class="card h-100"> <!-- ใช้ h-100 เพื่อให้การ์ดมีความสูงเท่ากัน -->
-                @php
-                    $path2 = App\Models\Work::findUserByworkID($user->userID);
-                @endphp
-                    <img src="{{($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png' }}" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
-
+                    <img src="images/login_bg.jpg" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $user->firstname }} {{ $user->surname }}</h5>
                         <p class="card-text">Position: {{ $user->position }}</p>

@@ -33,9 +33,7 @@
                     <p class="list-group-item"><strong>ตำแหน่งผู้ติดต่อ:</strong>
                         {{ $company->compContactPosition ?? 'ไม่ระบุ' }}</p>
                 </div>
-                <div style="display: flex; justify-content:center;">
-                    <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
-                </div>
+                <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
             </div>
 
             <style>
