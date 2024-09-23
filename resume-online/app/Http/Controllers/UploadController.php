@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanyController;
 
 
 class UploadController extends UserController
@@ -17,6 +18,7 @@ class UploadController extends UserController
     }
     public function uploaingProfile(Request $request){
         $a = new UserController();
+        $b = new CompanyController();
         
         $path = $request->file('file')->store('public');
         $filenameArray = explode('/',$path);
@@ -24,7 +26,11 @@ class UploadController extends UserController
 
         Work::uploadProfile(Auth()->user()->id,$filename);
     
-        return $a->show();
+        if(Auth()->user()->userType == 'user'){
+            return $a->show();
+        }else{
+            return $b->showCompany();
+        }
     }
     public function uploadResume(){
 

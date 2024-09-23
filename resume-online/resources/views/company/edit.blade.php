@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
+
 @extends('layouts.company')
 
 @section('content')
 <div class="container" >
-=======
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-@extends('layouts.app')
-
-@section('content')
     {{-- พื้นหลังไม่ขึ้น --}}
 
 {{-- <a href="{{ route('findUser') }}" class="btn btn-info mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}

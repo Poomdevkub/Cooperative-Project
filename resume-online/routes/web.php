@@ -43,8 +43,6 @@ Route::middleware([userMiddle::class])->group(function () {
     Route::get('/user', [UserController::class, 'show'])->name('user.show');
     Route::get('/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::post('/update', [UserController::class, 'update'])->name('user.update');
-    Route::get('/uploadProfile', [UploadController::class, 'uploadProfile'])->name('user.uploadP');
-    Route::post('/uploadProfile', [UploadController::class, 'uploaingProfile'])->name('user.uploadProfile');
     Route::get('/uploadResume', [UploadController::class, 'uploadResume'])->name('user.uploadR');
     Route::post('/uploadResume', [UploadController::class, 'uploaingResume'])->name('user.uploadResume');
 
@@ -62,6 +60,9 @@ Route::middleware([companyMiddle::class])->group(function () {
     Route::get('/findUser', [FindUserController::class, 'index'])->name('findUser');
 
 });
+
+Route::get('/uploadProfile', [UploadController::class, 'uploadProfile'])->middleware(['auth'])->name('user.uploadP');
+Route::post('/uploadProfile', [UploadController::class, 'uploaingProfile'])->middleware(['auth'])->name('user.uploadProfile');
 
 
 //home ของจริง
