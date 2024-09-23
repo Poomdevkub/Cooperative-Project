@@ -2,7 +2,6 @@
 
 @section('content')
 
-<main class="form-signin w-100 m-auto">
 
 <div class="content">
     <div class="wrapper">
@@ -129,8 +128,8 @@
       <h1 class="h3 mb-3 fw-normal">ลงทะเบียน</h1>
   
       <div class="form-floating my-2">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">อีเมล</label>
+        <input type="username" class="form-control" id="floatingInput" placeholder="">
+        <label for="floatingInput">ชื่อผู้ใช้</label>
       </div>
 
       <div class="form-floating my-2">
@@ -144,10 +143,10 @@
       </div>
   
      
-      <button class="btn btn-danger w-100 py-2" type="submit">ลงทะเบียน</button>
-      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a  href="login.blade.php" class="text-red">เข้าสู่ระบบ</a></p>
+      <button class="btn btn-primary w-100 py-2" type="submit">ลงทะเบียน</button>
+      <p class="mt-5 mb-3 text-body-secondary">มีบัญชีอยู่แล้ว ? <a href="{{ route('login') }}">เข้าสู่ระบบ</a></p>
     </form>
-  </main>
+  </main> --}}
 
 
 

@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
 
-<main class="form-signin w-100 m-auto">
 
 <div class="content">
     <div class="wrapper">
@@ -18,7 +16,7 @@
                 <i class='bx bx-lock-alt' ></i>
             </div>
 
-            <a type="submit" style="margin-top: 5%;">
+            <a type="submit">
                 <button type="submit" class="btn">เข้าสู่ระบบ</button>
             </a>
     
@@ -112,25 +110,17 @@
       <h1 class="h3 mb-3 fw-normal">เข้าสู่ระบบ</h1>
   
       <div class="form-floating my-2">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">อีเมล</label>
+        <input type="username" class="form-control" id="floatingInput" placeholder="">
+        <label for="floatingInput">ชื่อผู้ใช้</label>
       </div>
       <div class="form-floating my-2">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">รหัสผ่าน</label>
       </div>
-  
-      {{-- <div class="form-check text-start my-3">
-        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Remember me
-        </label>
-      </div> --}}
-
-      <button class="btn btn-danger w-100 py-2" type="submit">เข้าสู่ระบบ</button>
-      <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="register.blade.php" class="text-red">ลงทะเบียนใหม่</a></p>
+      <button class="btn btn-primary w-100 py-2" type="submit">เข้าสู่ระบบ</button>
+      <p class="mt-5 mb-3 text-body-secondary">ยังไม่มีบัญชี ? <a href="{{ route('register') }}">ลงทะเบียน</a></p>
     </form>
-  </main>
+  </main> --}}
 
 
 
