@@ -26,11 +26,11 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}">ค้นหาผู้หางาน</a>
+                        <a class="nav-link" href="{{ route('findUser', ['workType' => 'work']) }}">ค้นหาผู้หางาน</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}">ค้นหานักศึกษาฝึกงาน</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('findUser', ['workType' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
+                  </li>
 
                 </ul>
                 <ul class="navbar-nav ms-auto">
