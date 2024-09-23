@@ -3,12 +3,14 @@
 @section('title', 'Company Following')
 
 @section('content')
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Company Following</h1>
-        <div class="card shadow-sm">
+    <div class="d-flex justify-content-center mt-5">
+        {{-- <h1 class="text-center mb-4">Company Following</h1> --}}
+        <div class="card shadow-sm" style="width: 90%">
+
             <div class="card-header bg-primary text-white">
                 <h3 class="mb-0">รายละเอียดการติดตามบริษัท</h3>
             </div>
+
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
@@ -41,6 +43,23 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <style>
+                    .card-body th {
+                        margin-left: 5%;
+                        margin-top: 5%;
+                        font-size: large;
+                    }
+
+                    .card-body td {
+                        margin-left: 6%;
+                        margin-top: 5%;
+                    }
+
+
+                </style>
+
+
             </div>
         </div>
 
