@@ -4,23 +4,29 @@
 <div class="container">
 
     <!--BJK seARch-->
-    <form action="{{ route('searchUser') }}" method="POST" class="mb-4">
+    <h1 style="color: aliceblue; margin-top:5%"><strong>ค้นหาผู้หางาน</strong></h1>
+
+    <form action="{{ route('searchUser') }}" method="POST" class="mb-4" style=" width:500px; ">
         @csrf
         <input type="hidden" name="workType" id="workType" value="{{$workType}}">
-        <label for="search">ค้นหาด้วยจังหวัด:</label>
-        <select name="province" id="province" class="form-select">
-            <option value="" {{($oldProvince=='')?'selected':''}}>---ไม่เลือก---</option>
+
+        <select name="province" id="province" class="form-select" style="width: 110%; margin-top: 3%;display: grid; justify-items: end;">
+            <option value="" {{($oldProvince=='')?'selected':''}}>ค้นหาด้วยจังหวัด</option>
             @foreach($province as $i)
                 <option value="{{$i->name_in_thai}}" {{($oldProvince==$i->name_in_thai)?'selected':''}}>
                     {{$i->name_in_thai}}
                 </option>
             @endforeach
         </select>
-        <label for="search">ค้นหาด้วยตำแหน่ง</label>
-        <input type="text" name="position" id="position" class="form-text" value="{{$oldPosition}}">
-
-        <a type="submit" style="margin-top: 2%">
-            <button type="submit" class="btn btn-primary">บันทึก</button>
+        <input class="form-control me-2" type="text" placeholder="ค้นหาตำแหน่งงาน" aria-label="Search" name="position" id="position" class="form-text" value="{{$oldPosition}}">
+            <style>
+                .form-control{
+                    width: 110%;
+                    margin-top: 3%;
+                }
+            </style>
+        <a type="submit" style="margin-top:2%;">
+            <button type="submit" class="btn btn-primary">ค้นหา</button>
         </a>
     </form>
 
@@ -32,7 +38,7 @@
                 @php
                     $path2 = App\Models\Work::findUserByworkID($user->userID);
                 @endphp
-                    <img src="{{url(($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png') }}" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
+                    <img src="{{($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png' }}" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
 
                     <div class="card-body">
                         <h5 class="card-title">{{ $user->firstname }} {{ $user->surname }}</h5>
