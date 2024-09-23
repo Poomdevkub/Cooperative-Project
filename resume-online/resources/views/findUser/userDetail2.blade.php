@@ -9,7 +9,7 @@
         <div class="card-body">
             
             <h5 class="card-title">{{ $user->firstname ?? 'N/A' }} {{ $user->surname ?? 'N/A' }}</h5>
-            <p class="card-text"><strong>Email:</strong> {{ Auth::user()->email ?? 'N/A' }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ $email ?? 'N/A' }}</p>
             <p class="card-text"><strong>เพศ:</strong> {{ ucfirst($user->sex ?? 'N/A') }}</p>
             <p class="card-text"><strong>สัญชาติ:</strong> {{ $user->nation ?? 'N/A' }}</p>
             <p class="card-text"><strong>ศาสนา:</strong> {{ $user->religion ?? 'N/A' }}</p>
@@ -22,14 +22,17 @@
             <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
         </div>
         <div><!--profile-->
-            <img src="{{'storage/public/'.Auth::user()->namePicture}}">
+            @php
+                $path2 =App\Models\Work::findUserByworkID($user->userID);
+            @endphp
+            <img src="{{url('storage/public/'.$path2->namePicture)}}">
         </div>
 
         <div><!--resume-->
             @php
-                $path = App\Models\Work::findWorkById(Auth::user()->id);
+                $path = App\Models\Work::findWorkByWorkId($user->workfinderID);
             @endphp
-            <img src="{{'storage/public/resume/'.$path->nameResume}}">
+            <img src="{{url('storage/public/resume/'.$path->nameResume)}}">
         </div>
     </div>
 @endsection

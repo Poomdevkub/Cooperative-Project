@@ -32,7 +32,11 @@ class Work extends Model
         return DB::table('workfinder')->where( 'workfinderID' , $id)->first();
 
     }
+    public static function findUserByworkID($id)
+    {
+        return DB::table('users')->where( 'id' , $id)->first();
 
+    }
     public static function findWorkById($id)
     {
         return DB::table('workfinder')->where( 'userID' , $id)->first();
