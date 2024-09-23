@@ -13,6 +13,27 @@
             </div>
 
             <div class="card-body">
+                    <!--profile-->
+            <div style="display: flex; justify-content: center;">
+                <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="profile-pic">
+                <style>
+                    .profile-pic{
+                        width: 300px;
+                        height: 300px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-top: 5%;
+                        margin-bottom: 2%;
+                    }
+                </style>
+            </div>
+
+            {{-- ทำให้ลิ้งค์ไปหน้าอัพรูปด้วยจ้า --}}
+            <div style="margin-top: 2%; display:flex; justify-content:center;">
+                <a href="{{route('user.uploadP')}}">
+                    <button type="submit" class="btn btn-primary btn-lg">เปลี่ยนรูปโปรไฟล์</button>
+                </a>
+            </div>
                 <div class="list-group list-group-flush">
                     {{-- <li class="list-group-item"><strong>รหัสบริษัท (compID):</strong> {{ $company->compID }}</li> --}}
                     <p class="list-group-item"><strong>ชื่อบริษัท:</strong> {{ $company->compName ?? 'ไม่ระบุ' }}</p>
@@ -37,6 +58,7 @@
                     <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
                 </div>
             </div>
+           
 
             <style>
                 .card-body p {
