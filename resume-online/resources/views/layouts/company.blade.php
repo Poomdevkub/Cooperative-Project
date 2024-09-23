@@ -35,7 +35,7 @@
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{url('storage/public/'.Auth::user()->namePicture)}}" class="pic">
+                    <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="pic">
                     <style>
                         .pic{
                             width: 30px;

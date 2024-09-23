@@ -32,7 +32,7 @@
                 @php
                     $path2 = App\Models\Work::findUserByworkID($user->userID);
                 @endphp
-                    <img src="{{($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/login_bg.jpg' }}" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
+                    <img src="{{url(($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png') }}" class="card-img-top" alt="ภาพ" style="height: 268px; object-fit: cover;">
 
                     <div class="card-body">
                         <h5 class="card-title">{{ $user->firstname }} {{ $user->surname }}</h5>
