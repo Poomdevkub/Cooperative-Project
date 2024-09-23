@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center mt-5">
-        <div class="card shadow-sm" style="width: 100%;">
+        <div class="card shadow-sm" style="width: 55%;">
 
             <div class="card-header bg-primary text-white">
                 <h3 class="mb-0">รายละเอียดบริษัท</h3>
