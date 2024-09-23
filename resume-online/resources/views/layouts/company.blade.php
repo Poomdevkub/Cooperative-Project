@@ -47,7 +47,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
-                    <li><a class="dropdown-item" href="#">ตั้งค่าข้อมูลบริษัท</a></li>
+                    <li><a class="dropdown-item" href="/company/".${Auth()}>ตั้งค่าข้อมูลบริษัท</a></li>
                     <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
                     <li><form method="POST" action="{{ route('logout') }}">
                       @csrf
