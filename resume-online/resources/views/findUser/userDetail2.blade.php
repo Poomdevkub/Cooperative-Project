@@ -1,10 +1,10 @@
-@extends('layouts.user')
+@extends('layouts.company')
 
 @section('content')
-    {{-- <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a> --}}
-    <div class="card">
-        <div class="card-header">
-            รายละเอียดผู้ใช้
+    <a href="{{ route('findUser') }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a>
+    <div class="card" style="margin-top: 5%;">
+        <div class="card-header bg-primary text-white">
+            <h1><strong>ข้อมูลผู้ใช้งาน</strong></h1>
         </div>
         <div class="card-body">
 
@@ -12,7 +12,7 @@
                 @php
                     $path2 = App\Models\Work::findUserByworkID($user->userID);
                 @endphp
-                <img src="{{ url('storage/public/' . $path2->namePicture) }}" class="profile-pic">
+                <img src="{{ url(($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png') }}" class="profile-pic">
                 <style>
                     .profile-pic {
                         width: 300px;
@@ -20,12 +20,12 @@
                         border-radius: 50%;
                         object-fit: cover;
                         margin-top: 5%;
-                        margin-bottom: 2%;
+                        margin-bottom: 1%;
                     }
                 </style>
             </div>
 
-            <div style="display: flex; justify-content: center;">
+            <div style="display: flex; justify-content: center; margin-top:-5%;">
                 <div class="card border-info mb-3" style="width: 80%; margin-top: 7%;">
 
                     <div class="card-body">
@@ -63,7 +63,9 @@
                    
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -83,14 +85,30 @@
             }
 
             .resume-pic {
-                width: 800px;
-                height: 800px;
+                width: 60%;
+                height: 60%;
+                margin-bottom: 5%;
             }
 
             .detail {
                 margin-left: 100px;
             }
         </style>
+
+        <div style="margin-bottom: 5%; display:flex;">
+            <a href="#">
+                <button type="submit" class="btn btn-primary btn-lg">ติดตาม</button>
+                <style>
+                    button{
+                        width: 500%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 425%;
+                    }
+                </style>
+            </a>
+        </div>
 
 
     </div>
