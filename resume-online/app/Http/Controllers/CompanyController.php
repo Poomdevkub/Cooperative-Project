@@ -22,6 +22,7 @@ class CompanyController extends Controller
 
     public function show($id)
 {
+    
     // ดึงข้อมูล Company ตาม ID ที่ส่งมา
     $company = Company::findOrFail($id);
 

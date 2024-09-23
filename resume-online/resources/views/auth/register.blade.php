@@ -24,13 +24,16 @@
                 <input name="password_confirmation" id="password_confirmation"type="password" placeholder="ยืนยันรหัสผ่าน" required>
                 <i class='bx bx-lock-alt' ></i>
             </div>
-            <div  class="input-box">
-                <select id="userrole" class="block mt-1 w-full" type="text" name="userrole" >
-                    <option hidden selected>เลือกบท</option>
-                    <option value="user" >user</option>
-                    <option value="company">Company</option>
-                </select>
+
+            <div class="form-check form-check-inline" style="margin-top: 5%;">
+                <input id="userrole" class="form-check-input" type="radio" name="userrole" value="user">
+                <label class="form-check-label" for="inlineRadio1">User</label>
             </div>
+            <div class="form-check form-check-inline">
+                <input id="userrole" class="form-check-input" type="radio" name="userrole" value="company">
+                <label class="form-check-label" for="inlineRadio2">Company</label>
+            </div>
+
             <a >
                 <button type="submit" class="btn">ดำเนินการต่อ</button>
             </a>
