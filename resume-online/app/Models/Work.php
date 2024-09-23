@@ -97,7 +97,7 @@ class Work extends Model
         ]);
     }
 
-    public static function searchUser($workType,$province){
+    public static function searchUser($workType,$province,$position){
         
         $users = DB::table('workaddress')
         ->leftjoin( 'workcontact', 'workaddress.workfinderID', '=', 'workcontact.workfinderID')
@@ -105,6 +105,7 @@ class Work extends Model
         ->select('workfinder.*', 'workcontact.position', 'workaddress.province')
         ->where('workfinder.workType',$workType)
         ->where('workaddress.province',($province != '')? '=':'like',($province != '')? $province:'%%')
+        ->where('workcontact.position','like','%'.$position.'%')
         ->get();
 
         return $users;

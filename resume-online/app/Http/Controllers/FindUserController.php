@@ -35,7 +35,7 @@ class FindUserController extends Controller
         $workType = $request->workType; // ค่าเริ่มต้นเป็น intern
 
         // ดึงข้อมูลจากฐานข้อมูล
-        $users = Work::searchUser($workType,$request->province);
+        $users = Work::searchUser($workType,$request->province,$request->position);
         
 
         $province = Address::getProvince();
