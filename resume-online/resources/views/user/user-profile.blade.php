@@ -145,14 +145,14 @@
             /* ปรับขนาดตามต้องการ */
         }
 
-       
+
         .form-group input {
             /* margin-right: 5px; */
             width: 50%;
         }
 
         .form-group label {
-            
+
         }
 
         .form-group input {
@@ -212,7 +212,7 @@
 
                 <div class="form-group">
                     <label>น้ำหนัก:</label>
-                    <input type="float" id="weight" name="weight" value="100"> 
+                    <input type="float" id="weight" name="weight" value="100">
                     <label>ส่วนสูง:</label>
                     <input type="float" id="height" name="height" value="160">
                 </div>
@@ -233,7 +233,7 @@
                     <p>เรซูเม่</p>
                 </div>
 
-              
+
                 <!-- Contact Information -->
                 <h5 class="mt-5">ข้อมูลติดต่อ</h5>
 

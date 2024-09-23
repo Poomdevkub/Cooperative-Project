@@ -30,7 +30,7 @@ class UserController extends Controller
         return view('findUser.userDetail', compact('user','address','contact'));
     }
     public function getByid($id){
-        
+
         $user = Work::findWorkByWorkId($id);
         $address = Work::findAddressById($user->workfinderID);
         $contact = Work::findContactById($user->workfinderID);
@@ -52,7 +52,7 @@ class UserController extends Controller
 
     public function update(Request $request){
         $a = Auth()->user()->id;
-        
+
         $data = $request;
 
         Work::updateWork($a,$data);

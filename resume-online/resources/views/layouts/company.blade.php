@@ -13,7 +13,7 @@
             background-attachment: fixed;
         }
     </style>
-    <title>@yield('title')</title>
+    <title>@yield('title') | resume-online </title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -22,59 +22,63 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">JOBIE</a>
-            <ul class="navbar-nav">
+                <a class="navbar-brand" href="/">JOBIE</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users.index', ['type' => 'work']) }}">ค้นหาผู้หางาน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users.index', ['type' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/02.svg" class="pic">
+                            <style>
+                                .pic{
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+                            </style>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
+                            <li><a class="dropdown-item" href="{{route('company.show')}}">ตั้งค่าข้อมูลบริษัท</a></li>
+                            <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('users.index', ['type' => 'work']) }}">ค้นหาผู้หางาน</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('users.index', ['type' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
-              </li>
-            </ul>
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/02.svg" class="pic">
-                    <style>
-                        .pic{
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                            object-fit: cover;
-                        }
-                    </style>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
-                    <li><a class="dropdown-item" href="#">ตั้งค่าข้อมูลบริษัท</a></li>
-                    <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
-                    <li><form method="POST" action="{{ route('logout') }}">
-                      @csrf
-                      <button type="submit" class="dropdown-item" :href="route('logout')"
-                              onclick="event.preventDefault();
-                                          this.closest('form').submit();">
-                          {{ __('ออกจากระบบ') }}
-                      </button>
-                  </form></li>
-                    <style>
-                        .dropdown-menu{
-                            margin-left: -150%;
-                        }
+                            <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="dropdown-item" :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('ออกจากระบบ') }}
+                                </button>
+                            </form>
+                            </li>
 
-                    </style>
-                  </ul>
-                </li>
-            </ul>
-          </div>
+                            <style>
+                                .dropdown-menu{
+                                    margin-left: -150%;
+                                }
+
+                            </style>
+                        </ul>
+                    </li>
+                </ul>
+          {{-- </div> --}}
         </div>
-      </nav>
+    </nav>
 
-      <div class="container py-2">
-            @yield('content')
-      </div>
+    <div class="container py-2">
+        @yield('content')
+    </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
