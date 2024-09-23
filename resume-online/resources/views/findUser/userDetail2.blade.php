@@ -12,7 +12,7 @@
                 @php
                     $path2 = App\Models\Work::findUserByworkID($user->userID);
                 @endphp
-                <img src="{{ url('storage/public/' . $path2->namePicture) }}" class="profile-pic">
+                <img src="{{ url(($path2->namePicture != '')?(url('storage/public/' . $path2->namePicture)) : 'images/dummyprofile.png') }}" class="profile-pic">
                 <style>
                     .profile-pic {
                         width: 300px;

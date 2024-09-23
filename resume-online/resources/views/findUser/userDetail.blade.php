@@ -18,7 +18,7 @@
 
             <!--profile-->
             <div style="display: flex; justify-content: center;">
-                <img src="{{'storage/public/'.Auth::user()->namePicture}}" class="profile-pic">
+                <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="profile-pic">
                 <style>
                     .profile-pic{
                         width: 300px;
