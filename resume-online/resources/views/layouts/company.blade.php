@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         body {
-            background-image: url('images/homie.svg'); /* ลิงก์ไปยังรูปภาพ */
+            background-image: url('../images/homie.svg'); /* ลิงก์ไปยังรูปภาพ */
             background-size: cover; /* ทำให้รูปภาพครอบคลุมทั้งหน้าจอ */
             background-position: center; /* จัดกึ่งกลางรูปภาพ */
             background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
@@ -22,48 +22,45 @@
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #efefef;">
         <div class="container-fluid">
-                <a class="navbar-brand" href="/">JOBIE</a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index', ['type' => 'work']) }}">ค้นหาผู้หางาน</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index', ['type' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/02.svg" class="pic">
-                            <style>
-                                .pic{
-                                    width: 30px;
-                                    height: 30px;
-                                    border-radius: 50%;
-                                    object-fit: cover;
-                                }
-                            </style>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
-                            <li><a class="dropdown-item" href="{{route('company.show')}}">ตั้งค่าข้อมูลบริษัท</a></li>
-                            <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
+          <a class="navbar-brand" href="#">JOBIE</a>
+            <ul class="navbar-nav">
 
-                            <li>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="dropdown-item" :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('ออกจากระบบ') }}
-                                </button>
-                            </form>
-                            </li>
-
-                            <style>
-                                .dropdown-menu{
-                                    margin-left: -150%;
-                                }
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index', ['type' => 'work']) }}">ค้นหาผู้หางาน</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index', ['type' => 'intern']) }}">ค้นหานักศึกษาฝึกงาน</a>
+              </li>
+            </ul>
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/02.svg" class="pic">
+                    <style>
+                        .pic{
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    </style>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
+                    <li><a class="dropdown-item" href="#">ตั้งค่าข้อมูลบริษัท</a></li>
+                    <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
+                    <li><form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <button type="submit" class="dropdown-item" :href="route('logout')"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                          {{ __('ออกจากระบบ') }}
+                      </button>
+                  </form></li>
+                    <style>
+                        .dropdown-menu{
+                            margin-left: -150%;
+                        }
 
                             </style>
                         </ul>

@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      body {
+          background-image: url('../images/homie.svg'); /* ลิงก์ไปยังรูปภาพ */
+          background-size: cover; /* ทำให้รูปภาพครอบคลุมทั้งหน้าจอ */
+          background-position: center; /* จัดกึ่งกลางรูปภาพ */
+          background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
+          background-attachment: fixed;
+      }
+    </style>
     <title>@yield('title') | resume-online </title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
