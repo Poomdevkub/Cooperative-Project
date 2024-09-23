@@ -50,8 +50,10 @@
             @endphp
             <div class="col mb-4">
                 <div class="card h-100" style="width: 286px;">
+                    {{-- เปลี่ยนให้เป็นรูปโปรไฟล์ user ด้วยค่าา --}}
                     <img src="images/login_bg.jpg" class="card-img-top" alt="ภาพ" style="width: 286px; height: 286px; object-fit: cover;">
                     <div class="card-body">
+                        {{-- แสดงชื่อ-นามสกุล --}}
                         <h4 class="card-title"><strong>{{ $user->firstname }} {{ $user->surname }}</strong></h4>
 
 

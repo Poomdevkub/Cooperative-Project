@@ -53,7 +53,7 @@ Route::middleware([userMiddle::class])->group(function () {
 
 Route::middleware([companyMiddle::class])->group(function () {
     Route::get('/company', [CompanyController::class, 'showCompany'])->name('company.show');
-    Route::get('/company/edit/{id}', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::get('/company/edit', [CompanyController::class, 'edit'])->name('company.edit');
     Route::post('/company/update/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
     Route::get('/user/{id}', [UserController::class, 'getByid'])->name('user.getByid');

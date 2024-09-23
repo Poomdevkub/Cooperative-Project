@@ -20,6 +20,7 @@
                     <li class="list-group-item"><strong>จังหวัด:</strong> {{ $company->provinces->name_in_thai ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>อำเภอ:</strong> {{ $company->districts->name_in_thai ?? 'ไม่ระบุ' }}</li>
                     <li class="list-group-item"><strong>ตำบล:</strong> {{ $company->subdistricts->name_in_thai ?? 'ไม่ระบุ' }}</li> --}}
+<<<<<<< Updated upstream
                     <p class="list-group-item"><strong>รายละเอียดบริษัท:</strong>
                         {{ $company->compDescription ?? 'ไม่ระบุ' }}</p>
                     {{-- <li class="list-group-item"><strong>โมเดลบริษัท:</strong> {{ $company->compModel ?? 'ไม่ระบุ' }}</li> --}}
@@ -34,6 +35,19 @@
                         {{ $company->compContactPosition ?? 'ไม่ระบุ' }}</p>
                 </div>
                 <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
+=======
+                    <li class="list-group-item"><strong>รายละเอียดบริษัท:</strong> {{ $company->compDescription ?? 'ไม่ระบุ' }}</li>
+                    {{--<li class="list-group-item"><strong>โมเดลบริษัท:</strong> {{ $company->compModel ?? 'ไม่ระบุ' }}</li> --}}
+                    <li class="list-group-item"><strong>ที่อยู่บริษัท:</strong> {{ $company->compAddress ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>โทรศัพท์บริษัท:</strong> {{ $company->compPhone ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>Email บริษัท:</strong> {{ $company->compEmail ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>เว็บไซต์บริษัท:</strong> <a href="{{ $company->compWebsite }}" target="_blank">{{ $company->compWebsite ?? 'ไม่ระบุ' }}</a></li>
+                    <li class="list-group-item"><strong>ชื่อผู้ติดต่อ:</strong> {{ $company->compContactName ?? 'ไม่ระบุ' }}</li>
+                    <li class="list-group-item"><strong>ตำแหน่งผู้ติดต่อ:</strong> {{ $company->compContactPosition ?? 'ไม่ระบุ' }}</li>
+                </ul>
+                <a href="{{ route('company.edit') }}" class="btn btn-warning mt-3">แก้ไขข้อมูล</a>
+
+>>>>>>> Stashed changes
             </div>
 
             <style>

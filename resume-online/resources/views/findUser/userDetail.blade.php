@@ -9,6 +9,7 @@
             <h2><strong>โปรไฟล์</strong></h2>
         </div>
         <div class="card-body">
+
             <!--profile-->
             <div style="display: flex; justify-content: center;">
                 <img src="{{'storage/public/'.Auth::user()->namePicture}}" class="profile-pic">

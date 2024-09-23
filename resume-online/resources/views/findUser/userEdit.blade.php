@@ -17,25 +17,25 @@
                         {{-- email --}}
                         <div class="col-12">
                             <label class="form-label">Email</label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" disabled value="{{ Auth::user()->email ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="firstname" id="firstname" disabled value="{{ Auth::user()->email}}">
                         </div>
                         
                         {{-- ชื่อ --}}
                         <div class="col-6">
                             <label class="form-label">ชื่อ</label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" required value="{{ $user->firstname ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="firstname" id="firstname" required value="{{ $user->firstname}}">
                         </div>
 
                         {{-- นามสกุล --}}
                         <div class="col-6">
                             <label class="form-label">นามสกุล</label>
-                            <input type="text" class="form-control" name="surname" id="surname" required value="{{ $user->surname ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="surname" id="surname" required value="{{ $user->surname}}">
                         </div>
 
                         {{-- วันที่เกิด --}}
                         <div class="col-12">
                             <label class="form-label">วันเกิด</label>
-                            <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate ?? 'N/A' }}">
+                            <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate}}">
                         </div>
 
                         {{-- เพศ --}}
@@ -47,13 +47,13 @@
                         {{-- สัญชาติ --}}
                         <div class="col-4">
                             <label class="form-label">สัญชาติ</label>
-                            <input type="text" class="form-control" name="nation" id="nation" required value="{{ $user->nation ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="nation" id="nation" required value="{{ $user->nation}}">
                         </div>
 
                         {{-- ศาสนา --}}
                         <div class="col-4">
                             <label class="form-label">ศาสนา</label>
-                            <input type="text" class="form-control" name="religion" id="religion" required value="{{ $user->religion ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="religion" id="religion" required value="{{ $user->religion}}">
                         </div>
 
 
@@ -62,13 +62,13 @@
                         {{-- เบอร์โทรศัพท์ --}}
                         <div class="col-12">
                             <label class="form-label">เบอร์โทรศัพท์</label>
-                            <input type="text" class="form-control" name="phone" id="phone" required value="{{ $user->phone ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="phone" id="phone" required value="{{ $user->phone}}">
                         </div>
 
                         {{-- Line --}}
                         <div class="col-12">
                             <label class="form-label">LineID</label>
-                            <input type="text" class="form-control" name="line" id="line" required value="{{ $contact->line ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="line" id="line" required value="{{ $contact->line}}">
                         </div>
                         
                         <h3 style="margin-top: 5%">ข้อมูลที่อยู่</h3>
@@ -76,25 +76,13 @@
                         {{-- ที่อยู่ --}}
                         <div class="col-12">
                             <label class="form-label">ที่อยู่</label>
-                            <input type="text" class="form-control" name="addressDetails" id="addressDetails" required value="{{ $address->addressDetails  ?? 'N/A' }}">
-                        </div>
-
-                        {{-- จังหวัด --}}
-                        <div class="col-6">
-                            <label class="form-label">จังหวัด</label>
-                            <select name="province" id="province" class="form-select">
-                                @foreach($province as $i)
-                                    <option value="{{$i->name_in_thai}}" {{$address->province == $i->name_in_thai  ? 'selected' : ''}}>
-                                        {{$i->name_in_thai}}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" name="addressDetails" id="addressDetails" required value="{{ $address->addressDetails }}">
                         </div>
 
                         {{-- รหัสไปรษณีย์ --}}
                         <div class="col-6">
                             <label class="form-label">รหัสไปรษณีย์</label>
-                            <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->postcode  ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->postcode }}">
                         </div>
                         
 
@@ -115,7 +103,19 @@
                         {{-- ตำแหน่ง --}}
                         <div class="col-12">
                             <label class="form-label">ตำแหน่ง</label>
-                            <input type="text" class="form-control" name="position" id="position" required value="{{ $contact->position ?? 'N/A' }}">
+                            <input type="text" class="form-control" name="position" id="position" required value="{{ $contact->position}}">
+                        </div>
+
+                        {{-- จังหวัดที่สนใจ --}}
+                        <div class="col-6">
+                            <label class="form-label">จังหวัดที่สนใจ</label>
+                            <select name="province" id="province" class="form-select">
+                                @foreach($province as $i)
+                                    <option value="{{$i->name_in_thai}}" {{$address->province == $i->name_in_thai  ? 'selected' : ''}}>
+                                        {{$i->name_in_thai}}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                         
          {{-- ------------------------------------------ตัวเลือกหางาน---------------------------------------------------- --}}
@@ -134,12 +134,12 @@
                             {{-- เงินเดือนที่คาดหวัง-ขั้นต่ำ --}}
                             {{-- <div class="col-3">
                                 <label class="form-label">เงินเดือนที่คาดหวังต่ำสุด</label>
-                                <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->addressDetails  ?? 'N/A' }}">
+                                <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->addressDetails }}">
                             </div> --}}
                             {{-- เงินเดือนที่คาดหวัง-สูงสุด --}}
                             {{-- <div class="col-3">
                                 <label class="form-label">เงินเดือนที่คาดหวังสูงสุด</label>
-                                <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->addressDetails  ?? 'N/A' }}">
+                                <input type="text" class="form-control" name="postcode" id="postcode" required value="{{ $address->addressDetails }}">
                             </div> --}}
             {{-- ------------------------------------------ตัวเลือกหาที่ฝึกงาน---------------------------------------------------- --}}
                             {{-- จังหวัดที่สนใจ --}}
@@ -157,19 +157,19 @@
                             {{-- วันที่เริ่มฝึกงาน --}}
                             {{-- <div class="col-6">
                                 <label class="form-label">วันที่เริ่มฝึกงาน</label>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate ?? 'N/A' }}">
+                                <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate}}">
                             </div> --}}
 
                             {{-- วันที่สิ้นสุดฝึกงาน --}}
                             {{-- <div class="col-6">
                                 <label class="form-label">วันที่สิ้นสุดฝึกงาน</label>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate ?? 'N/A' }}">
+                                <input type="date" class="form-control" name="birthdate" id="birthdate" required value="{{ $user->birthdate}}">
                             </div> --}}
 
                             {{-- สวัสดิการที่ต้องการ --}}
                             {{-- <div class="col-12">
                                 <label class="form-label">สวัสดิการที่ต้องการ</label>
-                                <input type="text" class="form-control" name="position" id="position" required value="{{ $contact->position ?? 'N/A' }}">
+                                <input type="text" class="form-control" name="position" id="position" required value="{{ $contact->position}}">
                             </div> --}}
             
         
@@ -186,15 +186,15 @@
                     </div>
 
      {{-- -------------------------------------------ของเก่า---------------------------------------------------- --}}
-                {{-- <p class="card-text"><strong>Email:</strong> {{ Auth::user()->email ?? 'N/A' }}</p>
+                {{-- <p class="card-text"><strong>Email:</strong> {{ Auth::user()->email}}</p>
                 <div class="input-box">
                     <p class="card-title"><strong>ชื่อ:</strong> </p>
-                    <input name="firstname" id="firstname" type="text"  required value="{{ $user->firstname ?? 'N/A' }}">
+                    <input name="firstname" id="firstname" type="text"  required value="{{ $user->firstname}}">
                 </div>
 
                 <div class="input-box">
                     <p class="card-title"><strong>นามสกุล:</strong> </p>
-                    <input name="surname" id="surname" type="text"  required value="{{ $user->surname ?? 'N/A' }}">
+                    <input name="surname" id="surname" type="text"  required value="{{ $user->surname}}">
                 </div>
 
 
@@ -204,20 +204,20 @@
                 </div>
                 <div class="input-box">
                     <p class="card-text"><strong>สัญชาติ:</strong> </p>
-                    <input name="nation" id="nation" type="text" value="{{ $user->nation ?? 'N/A' }}" required>
+                    <input name="nation" id="nation" type="text" value="{{ $user->nation}}" required>
                 </div>
 
                 <div class="input-box">
                     <p class="card-text"><strong>ศาสนา:</strong> </p>
-                    <input name="religion" id="religion" type="text" value="{{ $user->religion ?? 'N/A' }}"  required>
+                    <input name="religion" id="religion" type="text" value="{{ $user->religion}}"  required>
                 </div>
 
                 <div class="input-box">
                     <p class="card-text"><strong>เบอร์โทรศัพท์:</strong> </p>
-                    <input name="phone" id="phone" type="text" value="{{ $user->phone ?? 'N/A' }}" required>
+                    <input name="phone" id="phone" type="text" value="{{ $user->phone}}" required>
                 </div>
                 <div class="input-box">
-                    <p class="card-text"><strong>จังหวัด:</strong> {{ $address->province  ?? 'N/A' }}</p>
+                    <p class="card-text"><strong>จังหวัด:</strong> {{ $address->province }}</p>
                     <select name="province" id="province"> 
                         @foreach($province as $i)
                         <option value="{{$i->name_in_thai}}" {{$address->province == $i->name_in_thai  ? 'selected' : ''}}>{{$i->name_in_thai}}</option>
@@ -226,26 +226,26 @@
                 </div>
                 <div class="input-box">
                     <p class="card-text"><strong>ที่อยู่:</strong> </p>
-                    <input name="addressDetails" id="addressDetails" type="text" value="{{ $address->addressDetails  ?? 'N/A' }}" required>
+                    <input name="addressDetails" id="addressDetails" type="text" value="{{ $address->addressDetails }}" required>
                 </div>
 
                 <div class="input-box">
                     <p class="card-text"><strong>รหัสไปรษณีย์:</strong> </p>
-                    <input name="postcode" id="postcode" type="text" value="{{ $address->addressDetails  ?? 'N/A' }}" required>
+                    <input name="postcode" id="postcode" type="text" value="{{ $address->addressDetails }}" required>
                 </div>
 
                 <div class="input-box">
                     <p class="card-text"><strong>วันที่เกิด:</strong></p>
-                    <input name="birthdate" id="birthdate" type="date" value="{{ $user->birthdate ?? 'N/A' }}" required>
+                    <input name="birthdate" id="birthdate" type="date" value="{{ $user->birthdate}}" required>
                 </div>
                 <div class="input-box">
                     <p class="card-text"><strong>ตำแหน่ง:</strong> </p>
-                    <input name="position" id="position" type="text" value="{{ $contact->position ?? 'N/A' }}" required>
+                    <input name="position" id="position" type="text" value="{{ $contact->position}}" required>
                 </div>
 
                 <div class="input-box">
-                    <p class="card-text"><strong>Line:</strong> {{ $contact->line ?? 'N/A' }}</p>
-                    <input name="line" id="line" type="text" value="{{ $contact->line ?? 'N/A' }}" required>
+                    <p class="card-text"><strong>Line:</strong> {{ $contact->line}}</p>
+                    <input name="line" id="line" type="text" value="{{ $contact->line}}" required>
                 </div>
 
                  <a type="submit">

@@ -41,10 +41,11 @@ class CompanyController extends Controller
     // Pass the company data to the view
     return view('company.edit', compact('company'));
 }*/
-public function edit($id)
+public function edit()
 {
+    $a = auth()->user()->id;
     // ดึงข้อมูลบริษัทตาม ID
-    $company = Company::findOrFail($id);
+    $company = Company::findByUserId($a);
 
     // ส่งข้อมูลไปยังวิวสำหรับการแก้ไข
     return view('company.edit', compact('company'));

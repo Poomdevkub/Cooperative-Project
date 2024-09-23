@@ -66,6 +66,12 @@ class Company extends Model
         DB::insert('INSERT INTO company ( userID) VALUES (?)',[$id]);
         
     }
+    public static function findByUserId($id)
+    {
+        
+        return DB::table('company')->where('userID',$id)->first();
+        
+    }
 
 
 
