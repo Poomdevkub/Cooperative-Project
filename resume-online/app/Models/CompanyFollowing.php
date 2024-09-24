@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyFollowing extends Model
 {
-    protected $table = 'companyfollowing'; // ตั้งชื่อโต๊ะ
+    protected $table = 'companyfollowing'; // ตั้งชื่อตาราง
     protected $primaryKey = 'companyFollowingID'; // ตั้ง Primary Key
+
+    // ฟิลด์ที่อนุญาตให้กรอกข้อมูลได้
+    protected $fillable = [
+        'compID',
+        'workfinderID',
+        'companyFollowingTypeID'
+    ];
+
+    public $timestamps = false; // ปิดการใช้งาน timestamps
 
     public function company()
     {
@@ -24,5 +33,3 @@ class CompanyFollowing extends Model
         return $this->belongsTo(Workfinder::class, 'workfinderID'); // เชื่อมกับ Model Workfinder
     }
 }
-
-

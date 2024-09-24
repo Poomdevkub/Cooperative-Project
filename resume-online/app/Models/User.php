@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Province::class, 'useravailableprovince', 'userID', 'provinceID');
     }
+
+    public function company()
+{
+    return $this->hasOne(Company::class, 'userID'); // เชื่อมกับตาราง company
+}
 }

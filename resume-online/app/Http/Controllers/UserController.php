@@ -60,6 +60,28 @@ class UserController extends Controller
         return UserController::show();
     }
 
+    public function followUser($id)
+{
+    // รับข้อมูลบริษัทที่ login อยู่ในปัจจุบัน
+    $companyID = auth()->user()->company->compID; // company ที่ login เข้าระบบ
+    $follow = \App\Models\CompanyFollowing::where('compID', $companyID)
+                                          ->where('workfinderID', $id)
+                                          ->first();
+
+    // ตรวจสอบว่าบริษัทนี้ได้ติดตามผู้ใช้นี้แล้วหรือยัง
+    if (!$follow) {
+        // ถ้ายังไม่ได้ติดตาม ก็สร้างการติดตามใหม่
+        \App\Models\CompanyFollowing::create([
+            'compID' => $companyID,
+            'workfinderID' => $id,
+            'companyFollowingTypeID' => 1 // ประเภทของการติดตาม (เช่น ติดตามทั่วไป)
+        ]);
+
+        return redirect()->back()->with('success', 'ติดตามผู้ใช้งานนี้เรียบร้อยแล้ว');
+    }
+
+    return redirect()->back()->with('error', 'คุณได้ติดตามผู้ใช้นี้แล้ว');
+}
 
 
 }
