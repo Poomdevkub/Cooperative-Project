@@ -95,20 +95,12 @@
             }
         </style>
 
-        <div style="margin-bottom: 5%; display:flex;">
-            <a href="#">
-                <button type="submit" class="btn btn-primary btn-lg">ติดตาม</button>
-                <style>
-                    button{
-                        width: 500%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-left: 425%;
-                    }
-                </style>
-            </a>
-        </div>
+<div style="margin-bottom: 5%; display:flex;">
+    <form action="{{ route('followUser', $user->workfinderID) }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-primary btn-lg">ติดตาม</button>
+    </form>
+</div>
 
 
     </div>

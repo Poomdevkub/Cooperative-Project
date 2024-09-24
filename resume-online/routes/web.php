@@ -97,6 +97,7 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 //Route::get('/company/{id}', [CompanyController::class, 'show'])->name('company.show');
 
 // new
+Route::post('/follow-user/{id}', [UserController::class, 'followUser'])->name('followUser');
 
 
 // Route::get('/user/{id}', function ($id) {
