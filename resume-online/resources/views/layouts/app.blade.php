@@ -105,7 +105,7 @@
                                 <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
                                 <li><a class="dropdown-item" href="/company/".${Auth()}>ตั้งค่าข้อมูลบริษัท</a></li>
                                                     {{-- {{route('company.show')}}   --}}
-                                <li><a class="dropdown-item" href="#">ผู้สมัครงาน</a></li>
+                                <li><a class="dropdown-item" href="{{route('companyfollowing.index')}}">ผู้สมัครงาน</a></li>
 
                                 <li>
                                 <form method="POST" action="{{ route('logout') }}">
