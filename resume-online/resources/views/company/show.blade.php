@@ -55,10 +55,10 @@
                         {{ $company->compContactPosition ?? 'ไม่ระบุ' }}</p>
                 </div>
                 <div style="display: flex; justify-content:center;">
-                    <a href="{{ route('company.edit', $company->compID) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
+                    <a href="{{ route('company.edit', $company->compID ) }}" class="btn btn-primary mt-3" >แก้ไขข้อมูล</a>
                 </div>
             </div>
-           
+
 
             <style>
                 .card-body p {

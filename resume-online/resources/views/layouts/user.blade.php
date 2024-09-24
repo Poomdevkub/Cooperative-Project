@@ -47,8 +47,8 @@
                             </style>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{route('user.show')}}">ภาพรวม</a></li>
                             <li><a class="dropdown-item" href="{{route('user.show')}}">โปรไฟล์</a></li>
+                            <li><a class="dropdown-item" href="{{route('user.edit')}}">ตั้งค่าโปรไฟล์</a></li>
                             {{-- <li><a class="dropdown-item" href="#">คำเชิญจากบริษัท</a></li> --}}
 
                             <li>

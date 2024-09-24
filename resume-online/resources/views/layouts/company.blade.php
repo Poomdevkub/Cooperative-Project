@@ -34,33 +34,21 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="pic">
-                    <style>
-                        .pic{
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                            object-fit: cover;
-                        }
-                    </style>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
-                    <li><a class="dropdown-item" href="/company/".${Auth()}>ตั้งค่าข้อมูลบริษัท</a></li>
-                    <li><a class="dropdown-item" href="{{route('companyfollowing.index')}}">ผู้สมัครงาน</a></li>
-                    <li><form method="POST" action="{{ route('logout') }}">
-                      @csrf
-                      <button type="submit" class="dropdown-item" :href="route('logout')"
-                              onclick="event.preventDefault();
-                                          this.closest('form').submit();">
-                          {{ __('ออกจากระบบ') }}
-                      </button>
-                  </form></li>
-                    <style>
-                        .dropdown-menu{
-                            margin-left: -150%;
-                        }
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{url((Auth::user()->namePicture != '')?('storage/public/'.Auth::user()->namePicture):'images/dummyprofile.png')}}" class="pic">
+                        <style>
+                            .pic{
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+                        </style>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/company/".${Auth()}>ข้อมูลบริษัท</a></li>
+                        <li><a class="dropdown-item" href="{{route('company.edit')}}">ตั้งค่าข้อมูลบริษัท</a></li>
+                        <li><a class="dropdown-item" href="{{route('companyfollowing.index')}}">รายการติดตาม</a></li>
 
                         <li>
                         <form method="POST" action="{{ route('logout') }}">
@@ -72,12 +60,29 @@
                             </button>
                         </form>
                         </li>
+
                         <style>
                             .dropdown-menu{
                                 margin-left: -150%;
                             }
 
+                            /* <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="dropdown-item" :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('ออกจากระบบ') }}
+                                </button>
+                            </form>
+                            </li> */
+                            /* <style> */
+                                .dropdown-menu{
+                                    margin-left: -150%;
+                                }
+
                         </style>
+
                     </ul>
                 </li>
             </ul>

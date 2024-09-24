@@ -48,6 +48,7 @@
                 </ul>
             @else
                 {{-- {{ $data= Auth()->user()->userType }} return userType  --}}
+                          {{-- Auth()->company()->compID --}}
                 @if (  ( Auth()->user()->userType ) == ("user")  )
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
@@ -63,8 +64,8 @@
                                 </style>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('user.show')}}">ภาพรวม</a></li>
                                 <li><a class="dropdown-item" href="{{route('user.show')}}">โปรไฟล์</a></li>
+                                <li><a class="dropdown-item" href="{{route('user.edit')}}">ตั้งค่าโปรไฟล์</a></li>
                                 {{-- <li><a class="dropdown-item" href="#">คำเชิญจากบริษัท</a></li> --}}
 
                                 <li>
@@ -102,10 +103,9 @@
                                 </style>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">ภาพรวม</a></li>
-                                <li><a class="dropdown-item" href="/company/".${Auth()}>ตั้งค่าข้อมูลบริษัท</a></li>
-                                                    {{-- {{route('company.show')}}   --}}
-                                <li><a class="dropdown-item" href="{{route('companyfollowing.index')}}">ผู้สมัครงาน</a></li>
+                                <li><a class="dropdown-item" href="/company/".${Auth()}>ข้อมูลบริษัท</a></li>
+                                <li><a class="dropdown-item" href="{{route('company.edit')}}">ตั้งค่าข้อมูลบริษัท</a></li>
+                                <li><a class="dropdown-item" href="{{route('companyfollowing.index')}}">รายการติดตาม</a></li>
 
                                 <li>
                                 <form method="POST" action="{{ route('logout') }}">
