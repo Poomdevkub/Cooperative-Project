@@ -98,6 +98,8 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 
 // new
 Route::post('/follow-user/{id}', [UserController::class, 'followUser'])->name('followUser');
+Route::post('/unfollow-user/{userId}', [UserController::class, 'unfollowUser'])->name('unfollowUser');
+
 
 
 // Route::get('/user/{id}', function ($id) {

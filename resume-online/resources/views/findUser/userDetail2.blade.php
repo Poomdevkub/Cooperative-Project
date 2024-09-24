@@ -96,11 +96,19 @@
         </style>
 
 <div style="margin-bottom: 5%; display:flex;">
-    <form action="{{ route('followUser', $user->workfinderID) }}" method="POST">
-        @csrf
-        <button type="submit" class="btn btn-primary btn-lg">ติดตาม</button>
-    </form>
+    @if ($isFollowing) <!-- เช็คว่าผู้ใช้ติดตามผู้ใช้นี้อยู่หรือไม่ -->
+        <form action="{{ route('unfollowUser', $user->workfinderID) }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-lg">เลิกติดตาม</button>
+        </form>
+    @else
+        <form action="{{ route('followUser', $user->workfinderID) }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-primary btn-lg">ติดตาม</button>
+        </form>
+    @endif
 </div>
+
 
 
     </div>
