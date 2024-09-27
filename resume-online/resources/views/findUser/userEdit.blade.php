@@ -53,15 +53,15 @@
                         {{-- เพศ --}}
                         <div class="col-6" style="margin-top: 5%;">
                             <div class="form-check form-check-inline">
-                                <input id="userrole" class="form-check-input" type="radio" name="userrole" value="male">
+                                <input id="sex" class="form-check-input" type="radio" name="sex" value="male">
                                 <label class="form-check-label" for="inlineRadio1">ชาย</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input id="userrole" class="form-check-input" type="radio" name="userrole" value="female">
+                                <input id="sex" class="form-check-input" type="radio" name="sex" value="female">
                                 <label class="form-check-label" for="inlineRadio2">หญิง</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input id="userrole" class="form-check-input" type="radio" name="userrole" value="none">
+                                <input id="sex" class="form-check-input" type="radio" name="sex" value="none">
                                 <label class="form-check-label" for="inlineRadio3">ไม่ระบุ</label>
                             </div>
                         </div>
