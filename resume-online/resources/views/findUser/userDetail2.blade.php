@@ -1,7 +1,7 @@
 @extends('layouts.company')
 
 @section('content')
-    <a href="{{ url()->previous() }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a>
+    <a href="{{ url()->previous()->previous() }}" class="btn btn-secondary mb-4" style="margin-top: 5%">ย้อนกลับ</a>
     <div class="card" style="margin-top: 5%;">
         <div class="card-header bg-primary text-white">
             <h1><strong>ข้อมูลผู้ใช้งาน</strong></h1>
