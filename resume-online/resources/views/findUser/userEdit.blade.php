@@ -128,9 +128,11 @@
                             </select>
                         </div>
         
-                         <a type="submit" style="margin-top: 2%">
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
-                        </a>
+                        <div style="display: flex;justify-content:center;">
+                            <a type="submit" style="margin-top: 2%">
+                                <button type="submit" class="btn btn-primary">บันทึก</button>
+                            </a>
+                        </div>
                         <style>
                             label{
                                 margin-top: 2%;

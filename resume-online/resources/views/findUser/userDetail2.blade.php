@@ -95,7 +95,7 @@
             }
         </style>
 
-<div style="margin-bottom: 5%; display:flex;">
+<div style="margin-bottom: 5%; display:flex;justify-content:center;">
     @if ($isFollowing) <!-- เช็คว่าผู้ใช้ติดตามผู้ใช้นี้อยู่หรือไม่ -->
         <form action="{{ route('unfollowUser', $user->workfinderID) }}" method="POST">
             @csrf

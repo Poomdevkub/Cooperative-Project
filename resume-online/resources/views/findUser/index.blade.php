@@ -5,7 +5,7 @@
 <div class="container">
 
     <!--BJK seARch-->
-    <h1 style="color: aliceblue; margin-top:5%"><strong>ค้นหาผู้หางาน</strong></h1>
+    <h1 style="color: aliceblue; margin-top:5%"><strong>ค้นหา</strong></h1>
 
     <form action="{{ route('searchUser') }}" method="POST" class="mb-4" style=" width:500px; ">
         @csrf

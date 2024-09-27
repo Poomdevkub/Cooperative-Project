@@ -55,7 +55,7 @@
                     {{-- อีเมล --}}
                     <div class="col-4">
                         <label class="form-label" for="compEmail">อีเมล</label>
-                        <input type="email" name="compEmail" class="form-control" value="{{ $company->compEmail }}">
+                        <input type="email" name="compEmail" class="form-control" value="{{ $company->compEmail }}" disabled>
                     </div>
 
                     {{-- เว็บไซต์ --}}
@@ -78,9 +78,11 @@
                     </div>
 
 
-                     <a type="submit" style="margin-top: 2%">
-                        <button type="submit" class="btn btn-primary">บันทึก</button>
-                    </a>
+                     <div style="display: flex;justify-content: center;">
+                        <a type="submit" style="margin-top: 2%; ">
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                        </a>
+                     </div>
                     <style>
                         label{
                             margin-top: 2%;
