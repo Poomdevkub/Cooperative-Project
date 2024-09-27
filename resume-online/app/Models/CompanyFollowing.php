@@ -32,4 +32,5 @@ class CompanyFollowing extends Model
     {
         return $this->belongsTo(Workfinder::class, 'workfinderID'); // เชื่อมกับ Model Workfinder
     }
+
 }

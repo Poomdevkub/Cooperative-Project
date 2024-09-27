@@ -100,6 +100,10 @@ Route::get('/register/type', function () { return view('/auth/type'); })->name('
 Route::post('/follow-user/{id}', [UserController::class, 'followUser'])->name('followUser');
 Route::post('/unfollow-user/{userId}', [UserController::class, 'unfollowUser'])->name('unfollowUser');
 
+Route::resource('companyfollowing', CompanyFollowingController::class);
+
+Route::get('/companyfollowing/{id}/edit', [CompanyFollowingController::class, 'edit'])->name('companyfollowing.edit');
+
 
 
 // Route::get('/user/{id}', function ($id) {
