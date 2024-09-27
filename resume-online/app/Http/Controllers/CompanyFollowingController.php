@@ -6,6 +6,7 @@ use App\Models\Company; // แก้ไขการนำเข้าที่�
 use Illuminate\Http\Request;
 use App\Models\CompanyFollowing;
 use Illuminate\Support\Facades\Auth;
+use App\Models\CompanyFollowingType;
 
 class CompanyFollowingController extends Controller
 {
@@ -35,5 +36,23 @@ class CompanyFollowingController extends Controller
 
     return redirect()->route('companyfollowing.index')->with('success', 'ลบข้อมูลสำเร็จ!');
 }
+
+public function edit($id)
+{
+    $companyFollowing = CompanyFollowing::findOrFail($id);
+    $companyfollowingtypes = CompanyFollowingType::all();
+
+    return view('companyfollowing.edit', compact('companyFollowing', 'companyfollowingtypes'));
+}
+
+public function update(Request $request, $id)
+{
+    $companyFollowing = CompanyFollowing::findOrFail($id);
+    $companyFollowing->companyFollowingTypeID = $request->input('companyFollowingTypeID');
+    $companyFollowing->save();
+
+    return redirect()->route('companyfollowing.index')->with('success', 'ประเภทการติดตามถูกอัปเดตเรียบร้อยแล้ว');
+}
+
 
 }

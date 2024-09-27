@@ -16,7 +16,7 @@
                     <thead>
                         <tr>
                             <th>ชื่อบริษัท</th>
-                            <th>ประเภทการติดตาม</th>
+                            <th>การติดตาม</th>
                             <th>ชื่อบุคคลที่ค้นหา</th>
                             <th>ดำเนินการ</th> <!-- คอลัมน์สำหรับปุ่ม -->
                         </tr>
@@ -36,7 +36,8 @@
                                     <form action="{{ route('companyfollowing.destroy', $following->companyFollowingID) }}" method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบ?')">ลบ</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบ?')">เลิกติดตาม</button>
+                                     <!-- ปุ่มแก้ไข --><a href="{{ route('companyfollowing.edit', $following->companyFollowingID) }}" class="btn btn-warning btn-sm">แก้ไขการติดตาม</a>
                                     </form>
                                 </td>
                             </tr>

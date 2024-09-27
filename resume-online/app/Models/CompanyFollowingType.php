@@ -13,6 +13,11 @@ class CompanyFollowingType extends Model
 {
     return $this->belongsTo(CompanyFollowingType::class, 'companyFollowingTypeID'); // เชื่อมโยงกับ Model CompanyFollowingType
 }
+
+public function companyFollowings()
+{
+    return $this->hasMany(CompanyFollowing::class, 'companyFollowingTypeID');
+}
 }
 
 
